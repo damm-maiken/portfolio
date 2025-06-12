@@ -135,15 +135,7 @@ function createProjectData(projectData, containerName){
         projectContainer.className = 'project-container';
 
             // Create a div for the project data
-            const projectData = document.createElement("div");
-            projectData.className = 'project-data-div';
-        
-                // Create the content for project-data-div
-                projectData.innerHTML = `
-                    <h1>${data.title}</h1>
-                    <p>${data.description}</p>
-                    <h3>Technology & User investigation</h3>
-                    <ul class = "tech-list">${technologyList}</ul>`;
+            
             
             // Create a frame for the images
             const frameContainer = document.createElement("div");
@@ -153,6 +145,17 @@ function createProjectData(projectData, containerName){
                 leftEdge.className = 'left-edge';
                 frameContainer.appendChild(leftEdge);
 
+            const projectData = document.createElement("div");
+            projectData.className = 'project-data-div';
+        
+                // Create the content for project-data-div
+                projectData.innerHTML = `
+                    <h1>${data.title}</h1>
+                    <p>${data.description}</p>
+                    <h3>Technology & User investigation</h3>
+                    <ul class = "tech-list">${technologyList}</ul>`;
+                frameContainer.appendChild(projectData)
+
                 // Create a div for the images
                 const contentContainer = document.createElement("div");
                 contentContainer.className = 'image-container';
@@ -161,7 +164,7 @@ function createProjectData(projectData, containerName){
                 frameContainer.appendChild(contentContainer);
 
         // Append the project data and frame to the project container
-        projectContainer.appendChild(projectData);
+        // projectContainer.appendChild(projectData);
         projectContainer.appendChild(frameContainer);
     
     // Append the project container to the main container
