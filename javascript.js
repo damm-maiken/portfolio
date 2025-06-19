@@ -84,8 +84,7 @@ const contentVoluentaryData = [
 const contentProjectData = [
     {
         title: "Master's thesis",
-        description: "Description of Master's thesis",
-        technology: ["Figma", "Godot", "Firebase", "One-week user test"],
+        description: "A gamified application for supporting mental health and structure among young adults",
         imagesStyle: "side-by-side",
         images: ["Images/Mindly_frontpage.png", "Images/Mindly_calendar.png", "Images/Mindly_calendar.png"],
 
@@ -123,10 +122,10 @@ function createProjectData(projectData, containerName){
     // Find the HTML container
     const container = document.querySelector(containerName)
 
-    // Loop through the data array and create a div for each object
+    // Loop through the project data array and create a div for each object
     projectData.forEach(data => { 
         // Make the technology into a list of HTML elements 
-        const technologyList = data.technology.map(elements => `<li>${elements}</li>`).join("");
+        //const technologyList = data.technology.map(elements => `<li>${elements}</li>`).join("");
          // Convert images into HTML elements so they can be added
         const imagesList = data.images.map(image => `<img src="${image}">`).join("");
 
@@ -134,17 +133,12 @@ function createProjectData(projectData, containerName){
         const projectContainer = document.createElement("div");
         projectContainer.className = 'project-container';
 
-            // Create a div for the project data
-            
-            
-            // // Create a frame for the images
-            // const frameContainer = document.createElement("div");
-            // frameContainer.className = 'frame-container';
-                // Create the dark blue left edge
-                const leftEdge = document.createElement("div");
-                leftEdge.className = 'left-edge';
-                projectContainer.appendChild(leftEdge);
+            // Create the left edge of the project container
+            const leftEdge = document.createElement("div");
+            leftEdge.className = 'left-edge';
+            projectContainer.appendChild(leftEdge);
 
+            // Create the right side 
             const rightSide = document.createElement("div");
             rightSide.className = 'project-right-side';
 
@@ -155,7 +149,7 @@ function createProjectData(projectData, containerName){
                     projectData.innerHTML = `
                         <h1>${data.title}</h1>
                         <p>${data.description}</p>`;
-                    rightSide.appendChild(projectData)
+                    rightSide.appendChild(projectData);
 
                     // Create a div for the images
                     const contentContainer = document.createElement("div");
@@ -163,12 +157,18 @@ function createProjectData(projectData, containerName){
                         contentContainer.innerHTML = `
                             <div">${imagesList}</div>`;
                     rightSide.appendChild(contentContainer);
+
+                    //Create icon
+                    const iconContainer = document.createElement("div");
+                    iconContainer.className = 'icon-container';
+                        iconContainer.innerHTML = `
+                        <p>Read more</p>
+                        <i class="fa-solid fa-arrow-right"></i>`;
+                    rightSide.appendChild(iconContainer);
+                    
+
                 
                 projectContainer.appendChild(rightSide);
-
-        // Append the project data and frame to the project container
-        // projectContainer.appendChild(projectData);
-        // projectContainer.appendChild(frameContainer);
     
     // Append the project container to the main container
     container.appendChild(projectContainer);

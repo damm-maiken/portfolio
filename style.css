@@ -36,13 +36,6 @@ body{
     display: flex;
 
 }
-/* 
-.frame-container{
-    background-color: #6096BA;
-    border-radius: 1vw;
-    height: fit-content;
-    display: flex;
-} */
 
 .left-edge{
     background-color: #274C77;
@@ -69,12 +62,22 @@ body{
     width: 100%;
     display: flex;
     justify-content: center;
-
-
 }
+
 .image-container img{
     width: 10vw;
     height: auto;
     border-radius: 10px;
     margin: 1vw;
+}
+
+.icon-container{
+    display: flex;
+    gap: 0.5vw;
+    align-items: center;
+    justify-content: flex-end;
+}
+
+.icon-container p{
+    margin: 0;
 }
