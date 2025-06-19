@@ -137,35 +137,38 @@ function createProjectData(projectData, containerName){
             // Create a div for the project data
             
             
-            // Create a frame for the images
-            const frameContainer = document.createElement("div");
-            frameContainer.className = 'frame-container';
+            // // Create a frame for the images
+            // const frameContainer = document.createElement("div");
+            // frameContainer.className = 'frame-container';
                 // Create the dark blue left edge
                 const leftEdge = document.createElement("div");
                 leftEdge.className = 'left-edge';
-                frameContainer.appendChild(leftEdge);
+                projectContainer.appendChild(leftEdge);
 
-            const projectData = document.createElement("div");
-            projectData.className = 'project-data-div';
-        
-                // Create the content for project-data-div
-                projectData.innerHTML = `
-                    <h1>${data.title}</h1>
-                    <p>${data.description}</p>
-                    <h3>Technology & User investigation</h3>
-                    <ul class = "tech-list">${technologyList}</ul>`;
-                frameContainer.appendChild(projectData)
+            const rightSide = document.createElement("div");
+            rightSide.className = 'project-right-side';
 
-                // Create a div for the images
-                const contentContainer = document.createElement("div");
-                contentContainer.className = 'image-container';
-                    contentContainer.innerHTML = `
-                        <div">${imagesList}</div>`;
-                frameContainer.appendChild(contentContainer);
+                const projectData = document.createElement("div");
+                projectData.className = 'project-data-div';
+            
+                    // Create the content for project-data-div
+                    projectData.innerHTML = `
+                        <h1>${data.title}</h1>
+                        <p>${data.description}</p>`;
+                    rightSide.appendChild(projectData)
+
+                    // Create a div for the images
+                    const contentContainer = document.createElement("div");
+                    contentContainer.className = 'image-container';
+                        contentContainer.innerHTML = `
+                            <div">${imagesList}</div>`;
+                    rightSide.appendChild(contentContainer);
+                
+                projectContainer.appendChild(rightSide);
 
         // Append the project data and frame to the project container
         // projectContainer.appendChild(projectData);
-        projectContainer.appendChild(frameContainer);
+        // projectContainer.appendChild(frameContainer);
     
     // Append the project container to the main container
     container.appendChild(projectContainer);
