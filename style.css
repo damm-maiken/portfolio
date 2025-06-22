@@ -81,3 +81,25 @@ body{
 .icon-container p{
     margin: 0;
 }
+
+.popup-container{
+    visibility: hidden;
+    opacity: 0;
+    pointer-events: none;
+    position: fixed;
+    display: flex;
+    justify-content: center;
+    width: 50vw;
+    height: 50vh;
+    top: 25vh;
+    left: 25vw;
+    z-index: 999;
+}
+
+.popup-container.show{
+    visibility: visible;
+    opacity: 1;
+    pointer-events: auto;
+    background-color: #274C77;
+
+}

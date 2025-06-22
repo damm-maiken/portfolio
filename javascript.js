@@ -87,6 +87,7 @@ const contentProjectData = [
         description: "A gamified application for supporting mental health and structure among young adults",
         imagesStyle: "side-by-side",
         images: ["Images/Mindly_frontpage.png", "Images/Mindly_calendar.png", "Images/Mindly_calendar.png"],
+        longDescription: "This is a longer description of the project"
 
     },
     {
@@ -95,8 +96,10 @@ const contentProjectData = [
         technology: ["Figma", "HTML", "CSS", "React", "Company collaboration"],
         imagesStyle: "diagonal",
         images: ["Images/Mindly_frontpage.png"],
+        longDescription: "This is a longer description of the DT"
     },
 ];
+
 
 function createWorkCard(workData, containerName){
     // Find the HTML container
@@ -121,6 +124,22 @@ function createWorkCard(workData, containerName){
 function createProjectData(projectData, containerName){
     // Find the HTML container
     const container = document.querySelector(containerName)
+
+    // Create a popup container for displaying project details
+    const popupContainer = document.createElement("div");
+    popupContainer.className = 'popup-container';
+    popupContainer.id = 'popup-container-id'
+        popupContainer.innerHTML = `
+        <div class="popup-content">
+            <i class="close fa-solid fa-xmark"></i> 
+            <h2 id="popup-title"></h2>
+            <p id="popup-description"></p>
+        </div>`;
+
+    popupContainer.querySelector(".close").addEventListener("click", () => {
+        popupContainer.classList.remove("show");
+    })
+    document.body.appendChild(popupContainer); 
 
     // Loop through the project data array and create a div for each object
     projectData.forEach(data => { 
@@ -161,18 +180,37 @@ function createProjectData(projectData, containerName){
                     //Create icon
                     const iconContainer = document.createElement("div");
                     iconContainer.className = 'icon-container';
-                        iconContainer.innerHTML = `
-                        <p>Read more</p>
-                        <i class="fa-solid fa-arrow-right"></i>`;
-                    rightSide.appendChild(iconContainer);
+                        // iconContainer.innerHTML = `
+                        // <p class="popup" id="popup-container-id">Read more</p>
+                        // <i class="fa-solid fa-arrow-right"></i>`;
                     
+                    const readMore = document.createElement("p");
+                    readMore.className = 'popup';
+                        readMore.textContent = "Read more";
 
+                    const arrowIcon = document.createElement("i");
+                    arrowIcon.className = 'fa-solid fa-arrow-right';
+
+
+                    iconContainer.appendChild(readMore);
+                    iconContainer.appendChild(arrowIcon);
+
+                    iconContainer.addEventListener("click", ()=> openPopup(data));
+                    rightSide.appendChild(iconContainer);
                 
                 projectContainer.appendChild(rightSide);
     
     // Append the project container to the main container
     container.appendChild(projectContainer);
     });
+}
+
+
+function openPopup(data){
+    const popup = document.getElementById("popup-container-id");
+    document.getElementById("popup-title").textContent = data.title;
+    document.getElementById("popup-description").textContent = data.longDescription;
+    popup.classList.add("show");
 }
 
 // 
