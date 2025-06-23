@@ -87,7 +87,9 @@ const contentProjectData = [
         description: "A gamified application for supporting mental health and structure among young adults",
         imagesStyle: "side-by-side",
         images: ["Images/Mindly_frontpage.png", "Images/Mindly_calendar.png", "Images/Mindly_calendar.png"],
-        longDescription: "This is a longer description of the project"
+        details: "<strong>Mindly</strong> <br/> This is a longer description of the project ",
+        technology: "<strong>Technology</strong> <br/> For the development of Mindly we have used various technologies. This includes Figma for wireframes and mockups. Adobe Illustrator was used for creating all the inventory for the room as well as the companion. Godot 4 and Firebase database were used for the development of the application.",
+        myRole: "<strong>My role</strong> <br/> As a part of the project I was responsible for the designing and drawing all the assests using Adobe Illustrator. Furthermore, I handled the UI design.",
 
     },
     {
@@ -96,7 +98,10 @@ const contentProjectData = [
         technology: ["Figma", "HTML", "CSS", "React", "Company collaboration"],
         imagesStyle: "diagonal",
         images: ["Images/Mindly_frontpage.png"],
-        longDescription: "This is a longer description of the DT"
+        details: "This is a longer description of the DT",
+        technology: "Figma, HTML, CSS, React",
+        myRole: "As a part of the project I was responsible for the design and development of the application, including creating wireframes, mockups, and implementing the front-end using Godot. I also contributed to user testing and feedback analysis.",
+
     },
 ];
 
@@ -132,19 +137,28 @@ function createProjectData(projectData, containerName){
         popupContainer.innerHTML = `
         <div class="popup-content">
             <h2 id="popup-title"></h2>
-            <p id="popup-description"></p>
+            <p id="popup-details"></p>
+            <p id="popup-technology"></p>
+            <p id="popup-myRole"></p>
+            <div id="popup-images"></div>
             <button class="close primary-btn">Go back</button>
         </div>`;
 
+    //Create an overlay for the popup
+    const overlay = document.createElement("div");
+    overlay.className = 'popup-overlay';
+    overlay.id = 'popup-overlay-id';
+    document.body.appendChild(overlay);
+
     popupContainer.querySelector(".close").addEventListener("click", () => {
         popupContainer.classList.remove("show");
+        overlay.classList.remove("show");
     })
     document.body.appendChild(popupContainer); 
 
     // Loop through the project data array and create a div for each object
     projectData.forEach(data => { 
-        // Make the technology into a list of HTML elements 
-        //const technologyList = data.technology.map(elements => `<li>${elements}</li>`).join("");
+        
          // Convert images into HTML elements so they can be added
         const imagesList = data.images.map(image => `<img src="${image}">`).join("");
 
@@ -208,9 +222,21 @@ function createProjectData(projectData, containerName){
 // This function is called when the "Read more" text is clicked
 function openPopup(data){
     const popup = document.getElementById("popup-container-id");
+    const overlay = document.getElementById("popup-overlay-id");
     document.getElementById("popup-title").textContent = data.title;
-    document.getElementById("popup-description").textContent = data.longDescription;
+    document.getElementById("popup-details").innerHTML = data.details;
+    document.getElementById("popup-technology").innerHTML = data.technology;
+    document.getElementById("popup-myRole").innerHTML = data.myRole;
+
+    const imagesPopup = document.getElementById("popup-images");
+    imagesPopup.innerHTML = data.images.map(image => `<img src="${image}">`).join("");
+
+    // Reset scroll position
+    popup.querySelector(".popup-content").scrollTop = 0; 
+
+    // Show the popup and overlay when the "Read more" text is clicked
     popup.classList.add("show");
+    overlay.classList.add("show");
 }
 
 // 
