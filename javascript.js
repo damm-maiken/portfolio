@@ -90,17 +90,18 @@ const contentProjectData = [
         details: "<strong>Mindly</strong> <br/> This is a longer description of the project ",
         technology: "<strong>Technology</strong> <br/> For the development of Mindly we have used various technologies. This includes Figma for wireframes and mockups. Adobe Illustrator was used for creating all the inventory for the room as well as the companion. Godot 4 and Firebase database were used for the development of the application.",
         myRole: "<strong>My role</strong> <br/> As a part of the project I was responsible for the designing and drawing all the assests using Adobe Illustrator. Furthermore, I handled the UI design.",
+        technologyIcons: ["Images/Icons/figma.png", "Images/Icons/illustrator.png", "Images/Icons/godot4.png", "Images/Icons/firebase.png"],
 
     },
     {
         title: "Design thinking atlas",
         description: "Description of Design thinking atlas",
-        technology: ["Figma", "HTML", "CSS", "React", "Company collaboration"],
-        imagesStyle: "diagonal",
-        images: ["Images/Mindly_frontpage.png"],
+        imagesStyle: "side-by-side",
+        images: ["Images/DTAtlas/DT_frontpage.png"],
         details: "This is a longer description of the DT",
-        technology: "Figma, HTML, CSS, React",
+        technology: "<strong>Technology</strong> <br/>" ,
         myRole: "As a part of the project I was responsible for the design and development of the application, including creating wireframes, mockups, and implementing the front-end using Godot. I also contributed to user testing and feedback analysis.",
+        technologyIcons: ["Images/Icons/figma.png", "Images/Icons/html.png", "Images/Icons/css.png", "Images/Icons/react.png", "Images/Icons/firebase.png"],
 
     },
 ];
@@ -139,6 +140,7 @@ function createProjectData(projectData, containerName){
             <h2 id="popup-title"></h2>
             <p id="popup-details"></p>
             <p id="popup-technology"></p>
+            <div id="technology-icons"></div>
             <p id="popup-myRole"></p>
             <div id="popup-images"></div>
             <button class="close primary-btn">Go back</button>
@@ -230,6 +232,11 @@ function openPopup(data){
 
     const imagesPopup = document.getElementById("popup-images");
     imagesPopup.innerHTML = data.images.map(image => `<img src="${image}">`).join("");
+
+    const technologyIcons = document.getElementById("technology-icons");
+    technologyIcons.innerHTML = data.technologyIcons
+    .map(icon => `<img src="${icon}">`)
+    .join("");
 
     // Reset scroll position
     popup.querySelector(".popup-content").scrollTop = 0; 

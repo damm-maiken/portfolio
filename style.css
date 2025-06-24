@@ -175,3 +175,15 @@ body{
     visibility: visible;
     opacity: 1;
 }
+
+#technology-icons{
+    display: flex;
+    justify-content: center;    
+}
+
+#technology-icons img{
+    width: 3vw;
+    height: 3vw;
+    margin: 0.5vw;
+}
+
