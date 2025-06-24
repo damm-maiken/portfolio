@@ -97,7 +97,7 @@ const contentProjectData = [
         title: "Design thinking atlas",
         description: "Description of Design thinking atlas",
         imagesStyle: "side-by-side",
-        images: ["Images/DTAtlas/DT_frontpage.png"],
+        images: ["Images/DTAtlas/DT_frontpage.png", "Images/DTAtlas/DT_PoR.png", "Images/DTAtlas/DT_Method.png"],
         details: "This is a longer description of the DT",
         technology: "<strong>Technology</strong> <br/>" ,
         myRole: "As a part of the project I was responsible for the design and development of the application, including creating wireframes, mockups, and implementing the front-end using Godot. I also contributed to user testing and feedback analysis.",
@@ -189,8 +189,7 @@ function createProjectData(projectData, containerName){
                     // Create a div for the images
                     const contentContainer = document.createElement("div");
                     contentContainer.className = 'image-container';
-                        contentContainer.innerHTML = `
-                            <div">${imagesList}</div>`;
+                        contentContainer.innerHTML = imagesList;
                     rightSide.appendChild(contentContainer);
 
                     //Create container for icon and text

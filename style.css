@@ -32,7 +32,7 @@ body{
     width: 50%;
     background-color: #6096BA;
     border-radius: 1vw;
-    height: fit-content;
+    height: 60vh;
     display: flex;
 
 }
@@ -62,13 +62,19 @@ body{
     width: 100%;
     display: flex;
     justify-content: center;
+    flex-wrap: nowrap;
+    overflow: hidden;
+    gap: 1vw;
 }
 
 .image-container img{
-    width: 10vw;
+    flex: 0 1 auto;
+    min-width: 0;
     height: auto;
+    max-width: 100%;
+    max-height: 30vh;
     border-radius: 10px;
-    margin: 1vw;
+    object-fit: contain;
 }
 
 .readMore-container{
