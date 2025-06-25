@@ -197,3 +197,25 @@ body{
     margin: 0.5vw;
 }
 
+.competencies-wrapper{
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1vw;
+}
+
+.competencies-container{
+    display: flex;
+    background-color: #6096BA;
+    border-radius: 1vw;
+}
+
+.compentencies-data{
+    background-color: #ffffff;
+    border-bottom-right-radius: 1vw;
+    border-top-right-radius: 1vw;
+    margin: 0.9vw;
+    margin-left: 0;
+    width: 100%;
+    padding: 1vw; 
+}
+
