@@ -86,7 +86,7 @@ const contentProjectData = [
         title: "Master's thesis",
         description: "A gamified application for supporting mental health and structure among young adults",
         imagesStyle: "side-by-side",
-        images: ["Images/Mindly_frontpage.png", "Images/Mindly_calendar.png", "Images/Mindly_calendar.png"],
+        images: ["Images/Mindly_frontpage.png", "Images/Mindly_calendar.png", "Images/Mindly_add_activity.png"],
         details: "<strong>Mindly</strong> <br/> This is a longer description of the project ",
         technology: "<strong>Technology</strong> <br/> For the development of Mindly we have used various technologies. This includes Figma for wireframes and mockups. Adobe Illustrator was used for creating all the inventory for the room as well as the companion. Godot 4 and Firebase database were used for the development of the application.",
         myRole: "<strong>My role</strong> <br/> As a part of the project I was responsible for the designing and drawing all the assests using Adobe Illustrator. Furthermore, I handled the UI design.",
@@ -103,6 +103,27 @@ const contentProjectData = [
         myRole: "As a part of the project I was responsible for the design and development of the application, including creating wireframes, mockups, and implementing the front-end using Godot. I also contributed to user testing and feedback analysis.",
         technologyIcons: ["Images/Icons/figma.png", "Images/Icons/html.png", "Images/Icons/css.png", "Images/Icons/react.png", "Images/Icons/firebase.png"],
 
+    },
+    {
+        title: "Bachelor's thesis",
+        description: "Description of Bachelor's thesis",
+        imagesStyle: "side-by-side",
+        images: ["Images/InTime/InTime_pieces.png", "Images/InTime/InTime_opgaver.png"],
+        details: "This is a longer description of the InTime",
+        technology: "<strong>Technology</strong> <br/>" ,
+        myRole: "As a part of the project I was responsible for the design and development of the application, including creating wireframes, mockups, and implementing the front-end using Godot. I also contributed to user testing and feedback analysis.",
+        technologyIcons: ["Images/Icons/figma.png"],
+    },
+
+    {
+        title: "MIWO",
+        description: "Description of MIWO",
+        imagesStyle: "side-by-side",
+        images: ["Images/MIWO/MIWO_about.png", "Images/MIWO/MIWO_feed.png"],
+        details: "This is a longer description of the InTime",
+        technology: "<strong>Technology</strong> <br/>" ,
+        myRole: "As a part of the project I was responsible for the design and development of the application, including creating wireframes, mockups, and implementing the front-end using Godot. I also contributed to user testing and feedback analysis.",
+        technologyIcons: ["Images/Icons/figma.png"],
     },
 ];
 
