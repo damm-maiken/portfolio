@@ -200,7 +200,8 @@ body{
 .competencies-wrapper{
     display: grid;
     grid-template-columns: repeat(4, 1fr);
-    gap: 1vw;
+    gap: 3vw;
+    margin: 3vw;
 }
 
 .competencies-container{
@@ -209,13 +210,14 @@ body{
     border-radius: 1vw;
 }
 
-.compentencies-data{
+.competencies-data{
     background-color: #ffffff;
     border-bottom-right-radius: 1vw;
     border-top-right-radius: 1vw;
     margin: 0.9vw;
     margin-left: 0;
     width: 100%;
-    padding: 1vw; 
+    padding: 1vw;
+    text-align: center; 
 }
 

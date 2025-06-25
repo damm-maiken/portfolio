@@ -127,6 +127,25 @@ const contentProjectData = [
     },
 ];
 
+const contentCompetenciesData = [
+    {
+        title: "User Research",
+        competencies: "Interviews | Usability testing | Workshops",
+    },
+    {
+        title: "Product Design",
+        competencies: "Figma | Wireframing | Mock ups | Concept development | Prototyping",
+    },
+    {
+        title: "Coding",
+        competencies: "HTML | CSS | JavaScript | React | Godot 4",
+    },
+    {
+        title: "Graphical Design",
+        competencies: "Illustrator | InDesign | Photoshop | Canva",
+    },
+];
+
 
 function createWorkCard(workData, containerName){
     // Find the HTML container
@@ -266,7 +285,31 @@ function openPopup(data){
     overlay.classList.add("show");
 }
 
-// 
+function createCompetenceCard(competenceData, containerName) {
+    const container = document.querySelector(containerName);
+
+    competenceData.forEach(data => {
+        const competeciesContainer = document.createElement("div");
+        competeciesContainer.className = 'competencies-container';
+
+            const leftEdge = document.createElement("div");
+            leftEdge.className = 'left-edge';
+            competeciesContainer.appendChild(leftEdge);
+
+            const competenciesData = document.createElement("div");
+            competenciesData.className = 'competencies-data';
+            competenciesData.innerHTML = `
+                <h2>${data.title}</h2>
+                <p>${data.competencies}</p>`;
+
+            competeciesContainer.appendChild(competenciesData);
+        
+        // Append the competencies container to the main container
+        container.appendChild(competeciesContainer);
+    })
+
+}
+
 
 function loadNavbar() {
     fetch("navbar.html") // Load the navbar file
@@ -289,6 +332,10 @@ window.onload = function () {
 
     if (document.querySelector(".project-data-container")) {
         createProjectData(contentProjectData, ".project-data-container");
+    }
+
+    if (document.querySelector(".competencies-wrapper")){
+        createCompetenceCard(contentCompetenciesData, ".competencies-wrapper");
     }
 
 }
