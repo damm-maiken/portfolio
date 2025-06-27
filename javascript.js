@@ -199,7 +199,7 @@ function createProjectData(projectData, containerName){
     document.body.appendChild(popupContainer); 
 
     // Loop through the project data array and create a div for each object
-    projectData.forEach(data => { 
+    projectData.forEach((data, index) => { 
         
          // Convert images into HTML elements so they can be added
         const imagesList = data.images.map(image => `<img src="${image}">`).join("");
@@ -207,6 +207,9 @@ function createProjectData(projectData, containerName){
         // Create a div for each project
         const projectContainer = document.createElement("div");
         projectContainer.className = 'project-container';
+        if (index % 2 === 1) {
+            projectContainer.classList.add('right-align');
+        }
 
             // Create the left edge of the project container
             const leftEdge = document.createElement("div");
