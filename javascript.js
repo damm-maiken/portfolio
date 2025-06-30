@@ -127,6 +127,25 @@ const contentProjectData = [
     },
 ];
 
+const contentCompetenciesData = [
+    {
+        title: "User Research",
+        competencies: "Interviews | Usability testing | Workshops",
+    },
+    {
+        title: "Product Design",
+        competencies: "Figma | Wireframing | Mock ups | Concept development | Prototyping",
+    },
+    {
+        title: "Coding",
+        competencies: "HTML | CSS | JavaScript | React | Godot 4",
+    },
+    {
+        title: "Graphical Design",
+        competencies: "Illustrator | InDesign | Photoshop | Canva",
+    },
+];
+
 
 function createWorkCard(workData, containerName){
     // Find the HTML container
@@ -180,7 +199,7 @@ function createProjectData(projectData, containerName){
     document.body.appendChild(popupContainer); 
 
     // Loop through the project data array and create a div for each object
-    projectData.forEach(data => { 
+    projectData.forEach((data, index) => { 
         
          // Convert images into HTML elements so they can be added
         const imagesList = data.images.map(image => `<img src="${image}">`).join("");
@@ -188,6 +207,9 @@ function createProjectData(projectData, containerName){
         // Create a div for each project
         const projectContainer = document.createElement("div");
         projectContainer.className = 'project-container';
+        if (index % 2 === 1) {
+            projectContainer.classList.add('right-align');
+        }
 
             // Create the left edge of the project container
             const leftEdge = document.createElement("div");
@@ -266,7 +288,31 @@ function openPopup(data){
     overlay.classList.add("show");
 }
 
-// 
+function createCompetenceCard(competenceData, containerName) {
+    const container = document.querySelector(containerName);
+
+    competenceData.forEach(data => {
+        const competeciesContainer = document.createElement("div");
+        competeciesContainer.className = 'competencies-container';
+
+            const leftEdge = document.createElement("div");
+            leftEdge.className = 'left-edge';
+            competeciesContainer.appendChild(leftEdge);
+
+            const competenciesData = document.createElement("div");
+            competenciesData.className = 'competencies-data';
+            competenciesData.innerHTML = `
+                <h2>${data.title}</h2>
+                <p>${data.competencies}</p>`;
+
+            competeciesContainer.appendChild(competenciesData);
+        
+        // Append the competencies container to the main container
+        container.appendChild(competeciesContainer);
+    })
+
+}
+
 
 function loadNavbar() {
     fetch("navbar.html") // Load the navbar file
@@ -289,6 +335,10 @@ window.onload = function () {
 
     if (document.querySelector(".project-data-container")) {
         createProjectData(contentProjectData, ".project-data-container");
+    }
+
+    if (document.querySelector(".competencies-wrapper")){
+        createCompetenceCard(contentCompetenciesData, ".competencies-wrapper");
     }
 
 }
