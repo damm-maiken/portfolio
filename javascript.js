@@ -84,12 +84,12 @@ const contentVoluentaryData = [
 const contentProjectData = [
     {
         title: "Master's thesis",
-        description: "A gamified application for supporting mental health and structure among young adults",
+        description: "A gamified application for supporting mental health and creating structure among young adults",
         imagesStyle: "side-by-side",
         images: ["Images/Mindly_frontpage.png", "Images/Mindly_calendar.png", "Images/Mindly_add_activity.png"],
-        details: "<strong>Mindly</strong> <br/> This is a longer description of the project ",
+        details: "<strong>Mindly</strong> <br/> Mindly is a gamified mental health and self-care app designed and developed as part of my Master’s thesis in Interaction Design at Aalborg University. Incorporating a virtual companion, Mindly helps users build healthy daily routines, practice mindfulness, and reflect on their well-being in their daily life.The project explores how thoughtful design can shape user engagement, satisfaction, and overall mental health outcomes in digital self-care tools. To test the app a one-week user-study with real users was conducted, gathering insights on how they interacted with the app and how it fit into their daily lives.",
         technology: "<strong>Technology</strong> <br/> For the development of Mindly we have used various technologies. This includes Figma for wireframes and mockups. Adobe Illustrator was used for creating all the inventory for the room as well as the companion. Godot 4 and Firebase database were used for the development of the application.",
-        myRole: "<strong>My role</strong> <br/> As a part of the project I was responsible for the designing and drawing all the assests using Adobe Illustrator. Furthermore, I handled the UI design.",
+        myRole: "<strong>My role</strong> <br/> As a part of the project I was responsible for the designing and drawing all the assests using Adobe Illustrator. Furthermore, I handled the UI design in Godot, creating a reusable style theme, and coded the level system using GDScript. I also contributed to analysing the test data and make them into meaningful insights.",
         technologyIcons: ["Images/Icons/figma.png", "Images/Icons/illustrator.png", "Images/Icons/godot4.png", "Images/Icons/firebase.png"],
 
     },
