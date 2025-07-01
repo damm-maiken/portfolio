@@ -119,6 +119,11 @@ h2{
     margin-top: auto;
 }
 
+.readMore-container:hover{
+    animation: headShake;
+    animation-duration: 1s;
+}
+
 .readMore-container p{
     margin: 0;
 }
