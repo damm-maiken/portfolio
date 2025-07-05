@@ -78,7 +78,9 @@ h2{
     margin: 0.9vw;
     margin-left: 0;
     width: 100%;
-    padding: 1vw;  
+    padding: 1vw;
+    display: flex;
+    flex-direction: column;  
 }
 
 .project-data-div {
@@ -117,6 +119,12 @@ h2{
     align-items: center;
     justify-content: flex-end;
     cursor: pointer;
+    margin-top: auto;
+}
+
+.readMore-container:hover{
+    animation: headShake;
+    animation-duration: 1s;
 }
 
 .readMore-container p{
@@ -144,6 +152,13 @@ h2{
     pointer-events: auto;
     background-color: #274C77;
 
+}
+
+.popup-container h2{
+    font-size: 2vw;
+    margin: 0.5vw;
+    font-weight: bold;
+    color: #274C77;
 }
 
 .popup-content{
@@ -196,7 +211,8 @@ h2{
     display: flex;
     justify-content: center;
     align-self: center;
-    margin: 2vw;
+    margin-top: 2vw;
+    margin-bottom: auto;
 }
 
 .primary-btn:hover{
