@@ -210,6 +210,10 @@ function createProjectData(projectData, containerName){
         if (index % 2 === 1) {
             projectContainer.classList.add('right-align');
         }
+        // if (index != 0){
+        //     projectContainer.classList.add('animate__animated', 'animate__fadeInUp');
+        //     projectContainer.style.setProperty('--animate-duration', '2s');
+        // }
 
             // Create the left edge of the project container
             const leftEdge = document.createElement("div");
@@ -260,6 +264,10 @@ function createProjectData(projectData, containerName){
     // Append the project container to the main container
     container.appendChild(projectContainer);
     });
+}
+
+function animateOnScroll(divSelector, animationClass, duration, skipFirst = false){
+    
 }
 
 // Function to open a popup with project details
