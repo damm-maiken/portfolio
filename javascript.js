@@ -210,6 +210,11 @@ function createProjectData(projectData, containerName){
         if (index % 2 === 1) {
             projectContainer.classList.add('right-align');
         }
+        if (index !== 0){
+            projectContainer.style.opacity = '0'; // Hide all projects except the first one
+            projectContainer.style.pointerEvents = 'none'; // Disable pointer events for hidden projects
+    
+        }
 
             // Create the left edge of the project container
             const leftEdge = document.createElement("div");
@@ -243,31 +248,32 @@ function createProjectData(projectData, containerName){
 
                     projectOverlay.querySelector("button").addEventListener("click", () => openPopup(data));
                     projectContainer.appendChild(projectOverlay);
-
-                    // //Create container for icon and text
-                    // const iconContainer = document.createElement("div");
-                    // iconContainer.className = 'readMore-container';
-                    //     // Create the read more text and arrow icon                    
-                    //     const readMore = document.createElement("p");
-                    //     readMore.className = 'popup';
-                    //     readMore.textContent = "Read more";
-
-                    //     const arrowIcon = document.createElement("i");
-                    //     arrowIcon.className = 'fa-solid fa-arrow-right';
-
-                    // // Append the read more text and arrow icon to the icon container
-                    // iconContainer.appendChild(readMore);
-                    // iconContainer.appendChild(arrowIcon);
-
-                    // // Add an event listener to the icon container to open the popup
-                    // // when clicked, passing the project data to the openPopup function
-                    // iconContainer.addEventListener("click", ()=> openPopup(data));
-                    // rightSide.appendChild(iconContainer);
                 
                 projectContainer.appendChild(rightSide);
     
     // Append the project container to the main container
     container.appendChild(projectContainer);
+    });
+}
+
+function fadeInOnScroll(selector) {
+    const elements = document.querySelectorAll(selector);
+
+    const observer = new IntersectionObserver((entries, observer) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting){
+                entry.target.style.opacity = '1';
+                entry.target.classList.add('animate__animated', 'animate__fadeInUp');
+                entry.target.style.pointerEvents = 'auto'; // Enable pointer events
+                observer.unobserve(entry.target); // Stop observing after the first intersection
+            }
+        });
+    }, { threshold: 0.2 });
+
+    elements.forEach((el, idx) => {
+        if (idx !== 0) { // Skip the first element
+        observer.observe(el);
+        }
     });
 }
 
@@ -344,6 +350,7 @@ window.onload = function () {
 
     if (document.querySelector(".project-data-container")) {
         createProjectData(contentProjectData, ".project-data-container");
+        fadeInOnScroll(".project-container"); // Fade in effect for projects
     }
 
     if (document.querySelector(".competencies-wrapper")){

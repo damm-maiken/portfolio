@@ -71,11 +71,6 @@ h2{
 
 }
 
-/* .project-overlay :hover{
-    animation: fadeInUp;
-    animation-duration: 0.5s;
-} */
-
 .project-overlay .primary-btn{
     margin: 0;
 }
@@ -83,7 +78,7 @@ h2{
     opacity: 1;
     pointer-events: auto;
     animation: fadeInUp;
-    animation-duration: 0.75s;
+    animation-duration: 0.40s;
 }
 
 
@@ -140,19 +135,6 @@ h2{
     border-radius: 10px;
     object-fit: contain;
 }
-
-/* .readMore-container{
-    display: flex;
-    gap: 0.5vw;
-    align-items: center;
-    justify-content: flex-end;
-    cursor: pointer;
-    margin-top: auto;
-}
-
-.readMore-container p{
-    margin: 0;
-} */
 
 .popup-container{
     visibility: hidden;
