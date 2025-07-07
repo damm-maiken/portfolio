@@ -43,6 +43,8 @@ h2{
 }
 
 .project-container{
+    position: relative;
+    overflow: hidden;
     justify-content: space-between; 
     margin: 2%;
     background-color: #6096BA;
@@ -55,6 +57,28 @@ h2{
     display: flex;
 
 }
+
+.project-overlay{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background: rgba(0, 0, 0, 0.5);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    pointer-events: none;
+
+}
+
+.project-overlay .primary-btn{
+    margin: 0;
+}
+.project-container:hover .project-overlay{
+    opacity: 1;
+    pointer-events: auto;
+}
+
 
 .project-container.right-align{
     margin-left: auto;
@@ -110,7 +134,7 @@ h2{
     object-fit: contain;
 }
 
-.readMore-container{
+/* .readMore-container{
     display: flex;
     gap: 0.5vw;
     align-items: center;
@@ -121,7 +145,7 @@ h2{
 
 .readMore-container p{
     margin: 0;
-}
+} */
 
 .popup-container{
     visibility: hidden;

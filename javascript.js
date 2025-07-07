@@ -235,25 +235,34 @@ function createProjectData(projectData, containerName){
                         contentContainer.innerHTML = imagesList;
                     rightSide.appendChild(contentContainer);
 
-                    //Create container for icon and text
-                    const iconContainer = document.createElement("div");
-                    iconContainer.className = 'readMore-container';
-                        // Create the read more text and arrow icon                    
-                        const readMore = document.createElement("p");
-                        readMore.className = 'popup';
-                        readMore.textContent = "Read more";
+                    // Create an overlay when hovering
+                    const projectOverlay = document.createElement("div");
+                    projectOverlay.className = 'project-overlay';
+                    projectOverlay.innerHTML = `
+                        <button class="primary-btn">Read more</button>`;
 
-                        const arrowIcon = document.createElement("i");
-                        arrowIcon.className = 'fa-solid fa-arrow-right';
+                    projectOverlay.querySelector("button").addEventListener("click", () => openPopup(data));
+                    projectContainer.appendChild(projectOverlay);
 
-                    // Append the read more text and arrow icon to the icon container
-                    iconContainer.appendChild(readMore);
-                    iconContainer.appendChild(arrowIcon);
+                    // //Create container for icon and text
+                    // const iconContainer = document.createElement("div");
+                    // iconContainer.className = 'readMore-container';
+                    //     // Create the read more text and arrow icon                    
+                    //     const readMore = document.createElement("p");
+                    //     readMore.className = 'popup';
+                    //     readMore.textContent = "Read more";
 
-                    // Add an event listener to the icon container to open the popup
-                    // when clicked, passing the project data to the openPopup function
-                    iconContainer.addEventListener("click", ()=> openPopup(data));
-                    rightSide.appendChild(iconContainer);
+                    //     const arrowIcon = document.createElement("i");
+                    //     arrowIcon.className = 'fa-solid fa-arrow-right';
+
+                    // // Append the read more text and arrow icon to the icon container
+                    // iconContainer.appendChild(readMore);
+                    // iconContainer.appendChild(arrowIcon);
+
+                    // // Add an event listener to the icon container to open the popup
+                    // // when clicked, passing the project data to the openPopup function
+                    // iconContainer.addEventListener("click", ()=> openPopup(data));
+                    // rightSide.appendChild(iconContainer);
                 
                 projectContainer.appendChild(rightSide);
     
