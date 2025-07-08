@@ -147,25 +147,25 @@ const contentCompetenciesData = [
 ];
 
 
-function createWorkCard(workData, containerName){
-    // Find the HTML container
-    const container = document.querySelector(containerName);
-    console.log("container found", container);
+// function createWorkCard(workData, containerName){
+//     // Find the HTML container
+//     const container = document.querySelector(containerName);
+//     console.log("container found", container);
 
-    // Loop through the data array and create a div for each object
-    workData.forEach(data => {
-    const content = document.createElement("div");
-    content.className = 'work-data-div';
+//     // Loop through the data array and create a div for each object
+//     workData.forEach(data => {
+//     const content = document.createElement("div");
+//     content.className = 'work-data-div';
     
-    content.innerHTML = `
-        <h1>${data.detailsTitle}</h1>
-        <p>${data.details}</p>`
+//     content.innerHTML = `
+//         <h1>${data.detailsTitle}</h1>
+//         <p>${data.details}</p>`
     
-    // Append the content to the container
-    container.appendChild(content);
-    });
+//     // Append the content to the container
+//     container.appendChild(content);
+//     });
     
-}
+// }
 
 function createProjectData(projectData, containerName){
     // Find the HTML container
@@ -344,9 +344,9 @@ window.onload = function () {
     // Load the navbar
     loadNavbar();
 
-    if (document.querySelector(".work-data-container")) {
-        createWorkCard(contentWorkData, ".work-data-container"); // Work experience
-    }
+    // if (document.querySelector(".work-data-container")) {
+    //     createWorkCard(contentWorkData, ".work-data-container"); // Work experience
+    // }
 
     if (document.querySelector(".project-data-container")) {
         createProjectData(contentProjectData, ".project-data-container");
