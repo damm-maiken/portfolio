@@ -26,11 +26,13 @@ h2{
 }
 
 .top-nav-bar a{
-    color: black;
+    color: #274C77;
+    /* font-weight: bold; */
     text-align: center;
     text-decoration: none;
-    float: left;
     padding: 0.75rem;
+    width: 7vw;
+    font-size: 1vw;
 }
 
 .top-nav-bar a:hover{
@@ -43,6 +45,8 @@ h2{
 }
 
 .project-container{
+    position: relative;
+    overflow: hidden;
     justify-content: space-between; 
     margin: 2%;
     background-color: #6096BA;
@@ -53,8 +57,33 @@ h2{
     margin-left: 5vw;
     margin-right: 0;
     display: flex;
+    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.50);
 
 }
+
+.project-overlay{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background: rgba(0, 0, 0, 0.5);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    pointer-events: none;
+
+}
+
+.project-overlay .primary-btn{
+    margin: 0;
+}
+.project-container:hover .project-overlay{
+    opacity: 1;
+    pointer-events: auto;
+    animation: fadeInUp;
+    animation-duration: 0.40s;
+}
+
 
 .project-container.right-align{
     margin-left: auto;
@@ -108,24 +137,6 @@ h2{
     max-height: 30vh;
     border-radius: 10px;
     object-fit: contain;
-}
-
-.readMore-container{
-    display: flex;
-    gap: 0.5vw;
-    align-items: center;
-    justify-content: flex-end;
-    cursor: pointer;
-    margin-top: auto;
-}
-
-.readMore-container:hover{
-    animation: headShake;
-    animation-duration: 1s;
-}
-
-.readMore-container p{
-    margin: 0;
 }
 
 .popup-container{
@@ -273,4 +284,80 @@ h2{
     margin: 0.5rem 0;
     font-weight: bold;
     color: #274C77;
+}
+
+.work-data-container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.accordion-item {
+    border-top: #274C77 0.15rem solid;
+    border-bottom: #274c77 0.15rem solid;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 1vw;
+    margin-bottom: 1vw;
+    display: flex;
+    flex-direction: column;
+    width: 60vw;
+}
+
+.accordion-item h2{
+    font-size: 1.5vw;
+    padding: 0.5vw;
+    margin: 0;
+
+}
+
+.accordion-header {
+    display: flex;
+    align-items: center;
+}
+
+.accordion-header i {
+    margin-left: auto;
+    font-size: 1.5vw;
+    align-self: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+
+}
+
+.accordion-header i.rotate {
+    transform: rotate(180deg);
+}
+
+.accordion-title {
+    font-weight: bold;
+    color: #274C77;
+    font-size: 1.5vw;
+    padding: 0.5vw;
+}
+
+.accordion-company {
+    font-weight: normal;
+    font-size: 1.5vw;
+    padding: 0.5vw;
+}
+
+.accordion-content {
+    max-height: 0;
+    overflow: hidden;
+    opacity: 0;
+    transition: max-height 0.4s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.4s;
+}
+
+.accordion-content.open {
+    max-height: 100vh; /* Adjust as needed */
+    opacity: 1;
+}
+
+.accordion-content li {
+    font-size: 1.2vw;
+    padding: 0.5vw;
 }
