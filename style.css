@@ -264,8 +264,12 @@ h2{
 
 .competencies-container{
     display: flex;
-    background-color: #6096BA;
+    /* flex-direction: column; /* Stack children vertically */
+    background-color: #6096BA; 
     border-radius: 1vw;
+    width: 100%;
+    height: 100%;
+    
 }
 
 .competencies-data{
@@ -274,9 +278,10 @@ h2{
     border-top-right-radius: 1vw;
     margin: 0.9vw;
     margin-left: 0;
-    width: 100%;
+    /* width: 100%;
+    height: 100%; */
     padding: 1vw;
-    text-align: center; 
+    text-align: center;
 }
 
 .competencies-data h2{
@@ -284,6 +289,16 @@ h2{
     margin: 0.5rem 0;
     font-weight: bold;
     color: #274C77;
+}
+
+.competencies-overlay{
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.competencies-container:hover .competencies-overlay{
+    opacity: 1;
+    pointer-events: auto;
 }
 
 .work-data-container{

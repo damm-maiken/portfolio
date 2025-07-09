@@ -328,12 +328,25 @@ function createCompetenceCard(competenceData, containerName) {
 
             const competenciesData = document.createElement("div");
             competenciesData.className = 'competencies-data';
-            competenciesData.innerHTML = `
-                <h2>${data.title}</h2>
-                <p>${data.competencies}</p>`;
 
+                const competecenciesContent = document.createElement("div");
+                competecenciesContent.className = 'competencies-content';
+                competecenciesContent.innerHTML = `
+                <h2>${data.title}</h2>`;
+
+            competenciesData.appendChild(competecenciesContent);
+
+
+                const competenciesOverlay = document.createElement("div");
+                competenciesOverlay.className = 'competencies-overlay';
+                competenciesOverlay.innerHTML = `
+                    <p>${data.competencies}</p>`;
+
+            competenciesData.appendChild(competenciesOverlay);
+
+            
             competeciesContainer.appendChild(competenciesData);
-        
+
         // Append the competencies container to the main container
         container.appendChild(competeciesContainer);
     })
