@@ -17,6 +17,8 @@ h2{
     margin: 3vw;
 }
 
+
+
 .top-nav-bar{
     display: flex;
     justify-content: flex-end;
@@ -383,4 +385,11 @@ h2{
 .accordion-content li {
     font-size: 1.2vw;
     padding: 0.5vw;
+}
+
+.about-wrapper p{
+    column-count: 2;
+    column-gap: 7vw;
+    margin: 1vw 5vw;
+    line-height: 1.5vw;
 }
