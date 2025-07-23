@@ -289,6 +289,8 @@ h2{
     margin: 0.5rem 0;
     font-weight: bold;
     color: #274C77;
+    transition: transform 0.3s;
+
 }
 
 .competencies-overlay{
@@ -299,6 +301,12 @@ h2{
 .competencies-container:hover .competencies-overlay{
     opacity: 1;
     pointer-events: auto;
+    animation: fadeInUp;
+    animation-duration: 0.30s;
+}
+
+.competencies-container:hover .competencies-data h2{
+    transform: translateY(-0.5vw);
 }
 
 .work-data-container{
