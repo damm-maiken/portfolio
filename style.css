@@ -389,7 +389,22 @@ h2{
 
 .about-wrapper p{
     column-count: 2;
-    column-gap: 7vw;
+    column-gap: 10vw;
     margin: 1vw 5vw;
     line-height: 1.5vw;
+}
+
+.top-page-wrapper{
+    display: flex;
+    align-items: center;
+    text-align: left;
+    gap: 2vw;
+}
+
+.top-page-wrapper img{
+    object-fit: cover;
+    width: 15vw;
+    height: auto;
+    margin-left: 7vw;
+    margin-top: 5vw;
 }
