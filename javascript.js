@@ -6,9 +6,10 @@ const experienceData = [
         company: " - Dataproces",
         period: "June 2023 - ",
         details: [
-            "As a Student Assistant at Dataproces I have been part of a concept development process - from the first idea to the final product.",
-            "My main responsibility was to create mock ups using Figma, used by developers.",
-            "I also contributed to development process by writing HTML and CSS code."
+            "Designed high-fidelity prototypes in Figma in close collaboration with developers.",
+            "Contributed to UX optimization with a focus on usability.",
+            "Coded UI components in HTML and CSS",
+            "Involved in the full development process from idea to final product"
         ]
     },
 
@@ -17,8 +18,8 @@ const experienceData = [
         company: " - AAU Student Guidance",
         period: "June 2022 - June 2023",
         details: [
-            "At AAU Student Guidance I had various tasks, which included updating websites using Umbraco.",
-            "I did also create content for social media using Adobe InDesign, Premiere Pro and Canva."
+            "Updated websites using Umbraco CMS",
+            "Created graphic elements for digital useI did also create content for social media using Adobe InDesign, Premiere Pro and Canva."
         ]
     },
 
@@ -27,7 +28,9 @@ const experienceData = [
         company: " - Agri Nord",
         period: "October 2020 - April 2021",
         details: [
-            "As a Student Assistant at Agri Nord were I involved in redesigning their website and afterwards porting the sites from Ultimize to Wordpress."
+            "Participated in the redesign of the company website",
+            "Migrated content from Ultimize to WordPress",
+            "Worked on responsive and accessible design"
         ]
     },
 
@@ -40,7 +43,10 @@ const educationData = [
         company: "Aalborg University",
         period: "September 2023 - June 2025",
         detailsTitle: "Master's Degree, Interaction Design",
-        details: ["During the master at Interaction Design I have worked further on the competencies from bachelor, but as an add on I have worked with the academic aspect as well, which include a more in depth understanding of various problems."]
+        details: [
+            "Strong skills in researching, analyzing, and solving user-centered design problems using the latest design methods",
+            "Specialized in user involvement and the design of innovative user-friendly solutions with a focus on functionality and accessibility"
+        ]
     },
     
     {
@@ -48,7 +54,11 @@ const educationData = [
         company: "Aalborg University",
         period: "September 2020 - June 2023",
         detailsTitle: "Bachelor's Degree, Interaction Design",
-        details: ["At my Bachelor’s Degree at Interaction Design I have worked with prototyping, user test, and various programming languages."]
+        details: [
+            "Worked intensively with user involvement through qualitative methods such as user testing and interviews, as well as quantitative surveys",
+            "Gained technical understanding and practical experience with HTML, CSS, C, and C# for developing functional prototypes and interactive solutions",
+            "Focused on designing digital solutions with high usability and aesthetics"
+        ]
     },
 ];
 
@@ -128,15 +138,15 @@ const contentProjectData = [
 const contentCompetenciesData = [
     {
         title: "User Research",
-        competencies: "Interviews | Usability testing | Workshops",
+        competencies: "Interviews | Usability testing | Workshops| Surveys | User Journey",
     },
     {
         title: "Product Design",
-        competencies: "Figma | Wireframing | Mock ups | Concept development | Prototyping",
+        competencies: "Figma | Wireframing | Mock ups | Concept development | Prototyping | 3D Modelling",
     },
     {
         title: "Coding",
-        competencies: "HTML | CSS | JavaScript | React | Godot 4",
+        competencies: "HTML | CSS | JavaScript | Github | Godot 4 | C#",
     },
     {
         title: "Graphical Design",
