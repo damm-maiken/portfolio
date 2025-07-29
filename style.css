@@ -1,6 +1,8 @@
 body{
     font-family: 'Inter', sans-serif;
     box-sizing: border-box;
+    background: #FFFFFF;
+    background: linear-gradient(160deg, rgba(255, 255, 255, 1) 65%, rgba(39, 76, 119, 0.4) 100%);
 }
 
 h1, h2, h3 {
@@ -25,6 +27,7 @@ h2{
     background-color: #E7ECEF;
     overflow: hidden;
     margin: 0;
+    box-shadow: 0 0.2rem 0.3rem rgba(0, 0, 0, 0.20);
 }
 
 .top-nav-bar a{
@@ -341,6 +344,7 @@ h2{
 .accordion-header {
     display: flex;
     align-items: center;
+    cursor: pointer;
 }
 
 .accordion-header i {
