@@ -91,47 +91,47 @@ const contentVoluentaryData = [
 
 const contentProjectData = [
     {
-        title: "Master's thesis",
+        title: "Master's thesis - Mindly",
         description: "A gamified application for supporting mental health and creating structure among young adults",
         imagesStyle: "side-by-side",
         images: ["Images/Mindly_frontpage.png", "Images/Mindly_calendar.png", "Images/Mindly_add_activity.png"],
-        details: "<strong>Mindly</strong> <br/> Mindly is a gamified mental health and self-care app designed and developed as part of my Master’s thesis in Interaction Design at Aalborg University. Incorporating a virtual companion, Mindly helps users build healthy daily routines, practice mindfulness, and reflect on their well-being in their daily life.The project explores how thoughtful design can shape user engagement, satisfaction, and overall mental health outcomes in digital self-care tools. To test the app a one-week user-study with real users was conducted, gathering insights on how they interacted with the app and how it fit into their daily lives.",
-        technology: "<strong>Technology</strong> <br/> For the development of Mindly we have used various technologies. This includes Figma for wireframes and mockups. Adobe Illustrator was used for creating all the inventory for the room as well as the companion. Godot 4 and Firebase database were used for the development of the application.",
-        myRole: "<strong>My role</strong> <br/> As a part of the project I was responsible for the designing and drawing all the assests using Adobe Illustrator. Furthermore, I handled the UI design in Godot, creating a reusable style theme, and coded the level system using GDScript. I also contributed to analysing the test data and make them into meaningful insights.",
+        details: "<strong>Mindly</strong> <br/> Mindly is a gamified mental health and self-care app designed and developed as part of my Master’s thesis in Interaction Design at Aalborg University. Incorporating a virtual companion, Mindly helped users build healthy daily routines, practice mindfulness, and reflect on their well-being in their daily life. The project explored how gamification can shape user engagement, satisfaction, and overall mental health outcomes in digital self-care tools. To test the app a one-week user-study with real users was conducted, gathering insights on how they interacted with the app and how it fit into their daily lives.",
+        technology: "<strong>Technology</strong> <br/> For the development of Mindly, we used a variety of technologies. This included Figma for wireframes and mockups, and Adobe Illustrator for creating all the room inventory as well as the virtual companion. The application itself was developed using Godot 4 and a Firebase database.",
+        myRole: "<strong>My role</strong> <br/> As part of the project, I was responsible for designing and illustrating all the room assets using Adobe Illustrator. Additionally, I handled the UI design in Godot, creating a reusable style theme, and implemented the level system using GDScript. I also contributed to analysing the test data and transforming it into meaningful insights.",
         technologyIcons: ["Images/Icons/figma.png", "Images/Icons/illustrator.png", "Images/Icons/godot4.png", "Images/Icons/firebase.png"],
 
     },
     {
         title: "Design thinking atlas",
-        description: "Description of Design thinking atlas",
+        description: "The Design Thinking Atlas is an interactive tool which helps developers incoorporate user-centered design into their projects",
         imagesStyle: "side-by-side",
         images: ["Images/DTAtlas/DT_frontpage.png", "Images/DTAtlas/DT_PoR.png", "Images/DTAtlas/DT_Method.png"],
-        details: "This is a longer description of the DT",
-        technology: "<strong>Technology</strong> <br/>" ,
-        myRole: "As a part of the project I was responsible for the design and development of the application, including creating wireframes, mockups, and implementing the front-end using Godot. I also contributed to user testing and feedback analysis.",
+        details: "<strong>The Design Thinking Atlas</strong> <br/> The Design Thinking Atlas was developed with a case company, and is an interactive tool which helps developers incorporate user-centered design into an agile development process. The Design Thinking Atlas provides a structured approach to user-centered design by offering an overview of the design thinking process and valuable methods for each phase. The development of the Design Thinking Atlas was an iterative process, consisting of multiple interviews and workshops with the case company to ensure that the tool met their needs and expectations. The final prototype was tested trough a workshop with the case company, simluating a real world scenario where the Design Thinking Atlas was used to solve a design challenge.",
+        technology: "<strong>Technology</strong> <br/> The Design Thinking Atlas was developed using Figma for wireframes and mockups, and the final prototype was implemented using HTML, CSS, and React. Firebase was used for the backend to store user data and preferences.",
+        myRole: "<strong>My role</strong> <br/> I was responsible for the design and development of the Design Thinking Atlas, including creating wireframes, mockups, and implementing the front end using HTML, CSS, and React. I also contributed to user testing and feedback analysis, identifying both opportunities and potential pitfalls.",
         technologyIcons: ["Images/Icons/figma.png", "Images/Icons/html.png", "Images/Icons/css.png", "Images/Icons/react.png", "Images/Icons/firebase.png"],
 
     },
     {
-        title: "Bachelor's thesis",
-        description: "Description of Bachelor's thesis",
+        title: "Bachelor's thesis - InTime",
+        description: "An intelligent system to help pupils learn about power plants",
         imagesStyle: "side-by-side",
         images: ["Images/InTime/InTime_pieces.png", "Images/InTime/InTime_opgaver.png"],
-        details: "This is a longer description of the InTime",
-        technology: "<strong>Technology</strong> <br/>" ,
-        myRole: "As a part of the project I was responsible for the design and development of the application, including creating wireframes, mockups, and implementing the front-end using Godot. I also contributed to user testing and feedback analysis.",
-        technologyIcons: ["Images/Icons/figma.png"],
+        details: "<strong>InTime</strong> <br/> InTime combines a website with a physical board game to teach pupils about power plants and their components. InTime is an intelligent system which generates tasks based on pupils' previous mistakes and progress, allowing them to learn at their own pace. The system is designed to be used in a classroom setting, where pupils can work together to solve tasks and learn about power plants in a fun and engaging way. The prototype was evaluated with teachers which overall felt positive about the concept and the potential of InTime to help pupils learn about power plants.",
+        technology: "<strong>Technology</strong> <br/> The website was developed using Svelte (a JavaScript framework), HTML, and CSS. The physical board game pieces were designed using SolidWorks and afterwards 3D printed." ,
+        myRole: "<strong>My role</strong> <br/> I was responsible for modelling the playing pieces using SolidWorks, and afterwards 3D printing them. Furthermore, I contributed to development of the website through wireframing and mockups in Figma.",
+        technologyIcons: ["Images/Icons/figma.png", "Images/Icons/solidworks.png", "Images/Icons/html.png", "Images/Icons/css.png"],
     },
 
     {
         title: "MIWO",
-        description: "Description of MIWO",
+        description: "A website for connecting with other to help with DIY projects.",
         imagesStyle: "side-by-side",
         images: ["Images/MIWO/MIWO_about.png", "Images/MIWO/MIWO_feed.png"],
-        details: "This is a longer description of the InTime",
-        technology: "<strong>Technology</strong> <br/>" ,
-        myRole: "As a part of the project I was responsible for the design and development of the application, including creating wireframes, mockups, and implementing the front-end using Godot. I also contributed to user testing and feedback analysis.",
-        technologyIcons: ["Images/Icons/figma.png"],
+        details: "<strong>MIWO</strong> <br/> MIWO is a platform that connects individuals who are interested in DIY projects. Users can share their projects, ask for help, and collaborate with others.",
+        technology: "<strong>Technology</strong> <br/> Figma was used for wireframing and design exploration. The final prototype was developed using HTML, CSS, and C#.",
+        myRole: "<strong>My role</strong> <br/>My role included designing wireframes, developing front-end components using HTML and CSS, and facilitate the usability test",
+        technologyIcons: ["Images/Icons/figma.png", "Images/Icons/html.png", "Images/Icons/css.png", "Images/Icons/c-sharp.png"]
     },
 ];
 

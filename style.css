@@ -53,8 +53,8 @@ h2{
     margin: 2%;
     background-color: #6096BA;
     border-radius: 1vw;
-    width: 60vw;
-    height: 60vh;
+    width: 50vw;
+    height: 50vh;
     margin-bottom: 5vw;
     margin-left: 5vw;
     margin-right: 0;
@@ -122,11 +122,14 @@ h2{
 
 .image-container{
     width: 100%;
+    margin: 0;
     display: flex;
     justify-content: center;
+    align-items: center;
     flex-wrap: nowrap;
     overflow: hidden;
     gap: 1vw;
+    
 }
 
 .image-container img{
