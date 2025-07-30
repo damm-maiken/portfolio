@@ -373,11 +373,22 @@ function loadNavbar() {
         .catch(error => console.error("Error loading navbar:", error));
 }
 
+function loadFooter() {
+    fetch("footer.html") // Load the footer file
+        .then(response => response.text()) // Convert response to text (HTML)
+        .then(data => {
+            document.getElementById("footer-container").innerHTML = data; // Insert into the page
+        })
+        .catch(error => console.error("Error loading footer:", error));
+}
+
 
 // Function to load the JS function so they can be used in HTML
 window.onload = function () {
     // Load the navbar
     loadNavbar();
+    // Load the footer
+    loadFooter();
 
     if (document.querySelector(".work-data-container")) {
         createExperienceData(experienceData, ".work-data-container"); // Work experience
