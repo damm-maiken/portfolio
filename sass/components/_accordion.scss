@@ -1,0 +1,70 @@
+
+.accordion-item {
+    border-top: #274C77 0.15rem solid;
+    border-bottom: #274c77 0.15rem solid;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 1vw;
+    margin-bottom: 1vw;
+    display: flex;
+    flex-direction: column;
+    width: 60vw;
+}
+
+.accordion-item h2{
+    font-size: 1.5vw;
+    padding: 0.5vw;
+    margin: 0;
+
+}
+
+.accordion-header {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+}
+
+.accordion-header i {
+    margin-left: auto;
+    font-size: 1.5vw;
+    align-self: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+
+}
+
+.accordion-header i.rotate {
+    transform: rotate(180deg);
+}
+
+.accordion-title {
+    font-weight: bold;
+    color: #274C77;
+    font-size: 1.5vw;
+    padding: 0.5vw;
+}
+
+.accordion-company {
+    font-weight: normal;
+    font-size: 1.5vw;
+    padding: 0.5vw;
+}
+
+.accordion-content {
+    max-height: 0;
+    overflow: hidden;
+    opacity: 0;
+    transition: max-height 0.4s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.4s;
+}
+
+.accordion-content.open {
+    max-height: 100vh; /* Adjust as needed */
+    opacity: 1;
+}
+
+.accordion-content li {
+    font-size: 1.2vw;
+    padding: 0.5vw;
+}

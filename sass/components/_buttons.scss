@@ -1,0 +1,18 @@
+.primary-btn{
+    background-color: #274C77;
+    color: #ffffff;
+    border-radius: 1vw;
+    padding: 0.75vw 1vw;
+    border: none;
+    cursor: pointer;
+    box-shadow: 0 3px 5px rgba(0, 0, 0, 0.50);
+    display: flex;
+    justify-content: center;
+    align-self: center;
+    margin-top: 2vw;
+    margin-bottom: auto;
+}
+
+.primary-btn:hover{
+    background-color: #6096BA;
+}
