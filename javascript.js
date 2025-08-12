@@ -161,25 +161,29 @@ function createExperienceData(experienceData, containerName){
     experienceData.forEach((data) => {
     const accordionItem = document.createElement("div");
     accordionItem.className = 'accordion-item';
-    accordionItem.innerHTML = `
-        <div class="accordion-header">
-            <span class="accordion-title">${data.title}</span>
-            <span class="accordion-company">${data.company}</span>
-            <i class="fas fa-chevron-down"></i>
-        </div>
-        
-        <div class="accordion-content">
-            <ul>
-            ${data.details.map(detail => `<li>${detail}</li>`).join("")}
-            </ul>
-        </div>`;
-
-    // Add event listener to toggle accordion content
+    accordionItem.innerHTML = getAccordionItemHTML(data);
+    
     accordionItem.querySelector(".accordion-header").addEventListener('click', displayContent);
 
     container.appendChild(accordionItem);
     });
 
+}
+
+function getAccordionItemHTML(data){
+    return `
+        <div class="accordion-header">
+            <span class="accordion-title">${data.title}</span>
+            <span class="accordion-company">${data.company}</span>
+            <i class="fas fa-chevron-down"></i>
+        </div>
+
+        <div class="accordion-content">
+            <ul>
+                ${data.details.map(detail => `<li>${detail}</li>`).join("")}
+            </ul>
+        </div>
+    `;
 }
 
 function displayContent() {
@@ -322,12 +326,10 @@ function openPopup(data){
     document.getElementById("popup-myRole").innerHTML = data.myRole;
 
     const imagesPopup = document.getElementById("popup-images");
-    imagesPopup.innerHTML = data.images.map(image => `<img src="${image}">`).join("");
+    imagesPopup.innerHTML = getImagesHTML(data.images);
 
     const technologyIcons = document.getElementById("technology-icons");
-    technologyIcons.innerHTML = data.technologyIcons
-    .map(icon => `<img src="${icon}">`)
-    .join("");
+    technologyIcons.innerHTML = getImagesHTML(data.technologyIcons);
 
     // Reset scroll position
     popup.querySelector(".popup-content").scrollTop = 0; 
