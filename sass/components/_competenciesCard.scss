@@ -1,0 +1,50 @@
+.competencies-wrapper{
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 3vw;
+    margin: 3vw;
+}
+
+.competencies-container{
+    display: flex;
+    background-color: #6096BA; 
+    border-radius: 1vw;
+    width: 100%;
+    height: 100%;
+    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.50);
+}
+
+.competencies-data{
+    background-color: #ffffff;
+    border-bottom-right-radius: 1vw;
+    border-top-right-radius: 1vw;
+    margin: 0.9vw;
+    margin-left: 0;
+    padding: 1vw;
+    text-align: center;
+}
+
+.competencies-data h2{
+    font-size: 1.5vw;
+    margin: 0.5rem 0;
+    font-weight: bold;
+    color: #274C77;
+    transition: transform 0.3s;
+
+}
+
+.competencies-overlay{
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.competencies-container:hover .competencies-overlay{
+    opacity: 1;
+    pointer-events: auto;
+    animation: fadeInUp;
+    animation-duration: 0.30s;
+}
+
+.competencies-container:hover .competencies-data h2{
+    transform: translateY(-0.5vw);
+}

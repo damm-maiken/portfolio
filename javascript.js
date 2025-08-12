@@ -161,25 +161,29 @@ function createExperienceData(experienceData, containerName){
     experienceData.forEach((data) => {
     const accordionItem = document.createElement("div");
     accordionItem.className = 'accordion-item';
-    accordionItem.innerHTML = `
-        <div class="accordion-header">
-            <span class="accordion-title">${data.title}</span>
-            <span class="accordion-company">${data.company}</span>
-            <i class="fas fa-chevron-down"></i>
-        </div>
-        
-        <div class="accordion-content">
-            <ul>
-            ${data.details.map(detail => `<li>${detail}</li>`).join("")}
-            </ul>
-        </div>`;
-
-    // Add event listener to toggle accordion content
+    accordionItem.innerHTML = getAccordionItemHTML(data);
+    
     accordionItem.querySelector(".accordion-header").addEventListener('click', displayContent);
 
     container.appendChild(accordionItem);
     });
 
+}
+
+function getAccordionItemHTML(data){
+    return `
+        <div class="accordion-header">
+            <span class="accordion-title">${data.title}</span>
+            <span class="accordion-company">${data.company}</span>
+            <i class="fas fa-chevron-down"></i>
+        </div>
+
+        <div class="accordion-content">
+            <ul>
+                ${data.details.map(detail => `<li>${detail}</li>`).join("")}
+            </ul>
+        </div>
+    `;
 }
 
 function displayContent() {
@@ -189,11 +193,80 @@ function displayContent() {
     chevron.classList.toggle('rotate');    // For chevron rotation
 }
 
+
+
 function createProjectData(projectData, containerName){
     // Find the HTML container
     const container = document.querySelector(containerName)
 
-    // Create a popup container for displaying project details
+    // Loop through the project data array and create a div for each object
+    projectData.forEach((data, index) => { 
+        
+        // Create a div for each project
+        const projectContainer = document.createElement("div");
+        projectContainer.className = 'project-container';
+        if (index % 2 === 1) {
+            projectContainer.classList.add('right-align');
+        }
+        if (index !== 0){
+            projectContainer.style.opacity = '0'; // Hide all projects except the first one
+            projectContainer.style.pointerEvents = 'none'; // Disable pointer events for hidden projects
+        }
+
+            // Create the left edge of the project container
+            const leftEdge = document.createElement("div");
+            leftEdge.className = 'left-edge';
+            projectContainer.appendChild(leftEdge);
+
+            // Create the right side 
+            const rightSide = document.createElement("div");
+            rightSide.className = 'project-right-side';
+            rightSide.innerHTML = getProjectCardHTML(data);
+            projectContainer.appendChild(rightSide);
+
+            const projectOverlay = document.createElement("div");
+            projectOverlay.className = 'project-overlay';
+            projectOverlay.innerHTML = createOverlay();
+            projectOverlay.querySelector("button").addEventListener("click", () => openPopup(data));
+            projectContainer.appendChild(projectOverlay);
+    
+    // Append the project container to the main container
+    container.appendChild(projectContainer);
+    });
+
+    // Create the popup for displaying project details
+    createPopup(); 
+}
+
+
+function getProjectCardHTML(projectData){
+    return `
+        <div class="project-data-div">
+            <h1>${projectData.title}</h1>
+            <p>${projectData.description}</p>
+        </div>
+        <div class="image-container">
+            ${getImagesHTML(projectData.images)}
+        </div>
+    `;
+}
+
+function createOverlay(){
+    return `
+        <div class="project-overlay">
+            <button class="primary-btn">Read more</button>
+        </div>
+    `;
+}
+
+// Function to get images HTML for each project
+function getImagesHTML(imageslist) {
+        return imageslist.map(imagelist => `<img src="${imagelist}">`).join("");
+}
+
+// Function to create a popup for displaying project details
+function createPopup(){
+     // Create a popup container for displaying project details
     const popupContainer = document.createElement("div");
     popupContainer.className = 'popup-container';
     popupContainer.id = 'popup-container-id'
@@ -219,63 +292,6 @@ function createProjectData(projectData, containerName){
         overlay.classList.remove("show");
     })
     document.body.appendChild(popupContainer); 
-
-    // Loop through the project data array and create a div for each object
-    projectData.forEach((data, index) => { 
-        
-         // Convert images into HTML elements so they can be added
-        const imagesList = data.images.map(image => `<img src="${image}">`).join("");
-
-        // Create a div for each project
-        const projectContainer = document.createElement("div");
-        projectContainer.className = 'project-container';
-        if (index % 2 === 1) {
-            projectContainer.classList.add('right-align');
-        }
-        if (index !== 0){
-            projectContainer.style.opacity = '0'; // Hide all projects except the first one
-            projectContainer.style.pointerEvents = 'none'; // Disable pointer events for hidden projects
-    
-        }
-
-            // Create the left edge of the project container
-            const leftEdge = document.createElement("div");
-            leftEdge.className = 'left-edge';
-            projectContainer.appendChild(leftEdge);
-
-            // Create the right side 
-            const rightSide = document.createElement("div");
-            rightSide.className = 'project-right-side';
-
-                const projectData = document.createElement("div");
-                projectData.className = 'project-data-div';
-            
-                    // Create the content for project-data-div
-                    projectData.innerHTML = `
-                        <h1>${data.title}</h1>
-                        <p>${data.description}</p>`;
-                    rightSide.appendChild(projectData);
-
-                    // Create a div for the images
-                    const contentContainer = document.createElement("div");
-                    contentContainer.className = 'image-container';
-                        contentContainer.innerHTML = imagesList;
-                    rightSide.appendChild(contentContainer);
-
-                    // Create an overlay when hovering
-                    const projectOverlay = document.createElement("div");
-                    projectOverlay.className = 'project-overlay';
-                    projectOverlay.innerHTML = `
-                        <button class="primary-btn">Read more</button>`;
-
-                    projectOverlay.querySelector("button").addEventListener("click", () => openPopup(data));
-                    projectContainer.appendChild(projectOverlay);
-                
-                projectContainer.appendChild(rightSide);
-    
-    // Append the project container to the main container
-    container.appendChild(projectContainer);
-    });
 }
 
 function fadeInOnScroll(selector) {
@@ -310,12 +326,10 @@ function openPopup(data){
     document.getElementById("popup-myRole").innerHTML = data.myRole;
 
     const imagesPopup = document.getElementById("popup-images");
-    imagesPopup.innerHTML = data.images.map(image => `<img src="${image}">`).join("");
+    imagesPopup.innerHTML = getImagesHTML(data.images);
 
     const technologyIcons = document.getElementById("technology-icons");
-    technologyIcons.innerHTML = data.technologyIcons
-    .map(icon => `<img src="${icon}">`)
-    .join("");
+    technologyIcons.innerHTML = getImagesHTML(data.technologyIcons);
 
     // Reset scroll position
     popup.querySelector(".popup-content").scrollTop = 0; 
