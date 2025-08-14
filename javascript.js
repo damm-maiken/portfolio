@@ -341,38 +341,41 @@ function openPopup(data){
 
 function createCompetenceCard(competenceData, containerName) {
     const container = document.querySelector(containerName);
+    container.classList.add('row', 'g-3', 'align-items-stretch');
 
     competenceData.forEach(data => {
-        const competeciesContainer = document.createElement("div");
-        competeciesContainer.className = 'competencies-container';
+        const columnWrapper = document.createElement("div");
+        columnWrapper.className = 'col-12 col-sm-6 col-md-3 d-flex';
+            const competeciesContainer = document.createElement("div");
+            competeciesContainer.className = 'competencies-container';
 
-            const leftEdge = document.createElement("div");
-            leftEdge.className = 'left-edge';
-            competeciesContainer.appendChild(leftEdge);
+                const leftEdge = document.createElement("div");
+                leftEdge.className = 'competencies-left-edge';
+                competeciesContainer.appendChild(leftEdge);
 
-            const competenciesData = document.createElement("div");
-            competenciesData.className = 'competencies-data';
+                const competenciesData = document.createElement("div");
+                competenciesData.className = 'competencies-data';
 
-                const competecenciesContent = document.createElement("div");
-                competecenciesContent.className = 'competencies-content';
-                competecenciesContent.innerHTML = `
-                <h2>${data.title}</h2>`;
+                    const competecenciesContent = document.createElement("div");
+                    competecenciesContent.className = 'competencies-content';
+                    competecenciesContent.innerHTML = `
+                    <h2>${data.title}</h2>`;
 
-            competenciesData.appendChild(competecenciesContent);
+                competenciesData.appendChild(competecenciesContent);
 
 
-                const competenciesOverlay = document.createElement("div");
-                competenciesOverlay.className = 'competencies-overlay';
-                competenciesOverlay.innerHTML = `
-                    <p>${data.competencies}</p>`;
+                    const competenciesOverlay = document.createElement("div");
+                    competenciesOverlay.className = 'competencies-overlay';
+                    competenciesOverlay.innerHTML = `
+                        <p>${data.competencies}</p>`;
 
-            competenciesData.appendChild(competenciesOverlay);
+                competenciesData.appendChild(competenciesOverlay);
 
-            
-            competeciesContainer.appendChild(competenciesData);
-
+                
+                competeciesContainer.appendChild(competenciesData);
+        columnWrapper.appendChild(competeciesContainer);
         // Append the competencies container to the main container
-        container.appendChild(competeciesContainer);
+        container.appendChild(columnWrapper);
     })
 
 }
