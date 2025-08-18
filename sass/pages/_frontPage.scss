@@ -1,0 +1,25 @@
+.frontpage-top-wrapper {
+    box-shadow: 0 3px 5px rgba(0, 0, 0, 0.50);
+
+}
+
+.frontpage-top-wrapper h1 {
+    margin-top: 0;
+    margin-bottom: 0.5rem;
+}
+
+
+.frontpage-top-wrapper .row{
+    align-items: center;
+    justify-content: center;
+}
+
+.frontpage-top-left, .frontpage-top-middle, .frontpage-top-right {
+    text-align: center;
+}
+
+.frontpage-top-button {
+    display: flex;
+    justify-content: center;
+}
+

@@ -1,5 +1,4 @@
 @import 'base/_typography.scss';
-@import 'base/_basePages.scss';
 
 @import 'layout/_navigation.scss';
 @import 'layout/_footer.scss';
@@ -9,6 +8,7 @@
 @import 'components/_competenciesCard.scss';
 @import 'components/_accordion.scss';
 
+@import 'pages/frontPage.scss';
 @import 'pages/_work.scss';
 @import 'pages/_about.scss';
 
