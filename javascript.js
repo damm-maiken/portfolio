@@ -339,6 +339,7 @@ function openPopup(data){
     overlay.classList.add("show");
 }
 
+
 function createCompetenceCard(competenceData, containerName) {
     const container = document.querySelector(containerName);
     container.classList.add('row', 'g-3', 'align-items-stretch');

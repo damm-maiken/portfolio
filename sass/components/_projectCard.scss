@@ -194,3 +194,29 @@
     height: 3vw;
     margin: 0.5vw;
 }
+
+.project-container-1{
+    background-color: #6096BA;
+    border-radius: 1vw;
+    height: 20vw;
+    display: flex;
+}
+
+.projectCard-left{
+    background-color: #274C77;
+    width: 10%;
+    height: 20vw;
+    border-bottom-left-radius: 1vw;
+    border-top-left-radius: 1vw;
+}
+
+.projectCard-right{
+    background-color: #ffffff;
+    width: 100%;
+    margin: 1vw;
+    display: flex;
+}
+
+.projectCard-text{
+    margin-top: auto;
+}
