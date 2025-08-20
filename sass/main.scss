@@ -1,16 +1,16 @@
-@import 'base/_typography.scss';
-@import 'base/_basePages.scss';
+@use 'base/_typography.scss';
 
-@import 'layout/_navigation.scss';
-@import 'layout/_footer.scss';
+@use 'layout/_navigation.scss';
+@use 'layout/_footer.scss';
 
-@import 'components/_projectCard.scss';
-@import 'components/_buttons.scss';
-@import 'components/_competenciesCard.scss';
-@import 'components/_accordion.scss';
+@use 'components/_projectCard.scss';
+@use 'components/_buttons.scss';
+@use 'components/_competenciesCard.scss';
+@use 'components/_accordion.scss';
 
-@import 'pages/_work.scss';
-@import 'pages/_about.scss';
+@use 'pages/frontPage.scss';
+@use 'pages/_work.scss';
+@use 'pages/_about.scss';
 
 
 
