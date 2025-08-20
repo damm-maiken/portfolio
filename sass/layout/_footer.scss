@@ -1,22 +1,19 @@
 .footer {
     background-color: #E7ECEF;
+    padding: 1rem;
 
 }
 
-.footer-wrapper {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    text-align: center;
-    justify-items: center;
-    align-items: center;
-    height: 5vw;
+.footer h3 {
+    font-weight: 700;
+    color: #274C77;
 }
 
 .footer-item{
     display: flex;
     align-items: center;
-    justify-content: center;
-    gap: 0.5vw;
+    gap: 0.5rem;
+    padding: 0.5rem;
 }
 
 .footer-item a,
@@ -24,5 +21,10 @@
 .footer-item i{
     text-decoration: none;
     color: #274C77;
-    font-size: 1.2vw;
+    margin: 0;
+    font-size: 1.25rem;
 }
+
+// .footer-item i {
+//     font-size: 1.5rem;
+// }
