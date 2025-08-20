@@ -193,56 +193,31 @@ function displayContent() {
     chevron.classList.toggle('rotate');    // For chevron rotation
 }
 
-
-
-function createProjectData(projectData, containerName){
-    // Find the HTML container
-    const container = document.querySelector(containerName)
-
-    // Loop through the project data array and create a div for each object
-    projectData.forEach((data, index) => { 
-        
-        // Create a div for each project
-        const projectContainer = document.createElement("div");
-        projectContainer.className = 'project-container';
-        if (index % 2 === 1) {
-            projectContainer.classList.add('right-align');
-        }
-        if (index !== 0){
-            projectContainer.style.opacity = '0'; // Hide all projects except the first one
-            projectContainer.style.pointerEvents = 'none'; // Disable pointer events for hidden projects
-        }
-
-            // Create the left edge of the project container
-            const leftEdge = document.createElement("div");
-            leftEdge.className = 'left-edge';
-            projectContainer.appendChild(leftEdge);
-
-            // Create the right side 
-            const rightSide = document.createElement("div");
-            rightSide.className = 'project-right-side';
-            rightSide.innerHTML = getProjectCardHTML(data);
-            projectContainer.appendChild(rightSide);
-
-            const projectOverlay = document.createElement("div");
-            projectOverlay.className = 'project-overlay';
-            projectOverlay.innerHTML = createOverlay();
-            projectOverlay.querySelector("button").addEventListener("click", () => openPopup(data));
-            projectContainer.appendChild(projectOverlay);
-    
-    // Append the project container to the main container
-    container.appendChild(projectContainer);
-    });
-
-    // Create the popup for displaying project details
-    createPopup(); 
-}
-
 function createProjectCard(projectData, containerName){
     const container = document.querySelector(containerName);
 
+    projectData.forEach((data, index) => {
 
-    projectData.forEach((data) => {
+        //Only render the first 3 projects (used for the frontpage)
+        if (containerName === ".frontpage-projects" && index >= 3){
+            if (index === 3) {
+                            
+            const buttonWrapper = document.createElement("div");
+            buttonWrapper.className = "col-12 text-center mt-4";
+
+            const showMoreButton = document.createElement("button");
+            showMoreButton.className = "primary-btn";
+            showMoreButton.innerText = "See more projects";
+            showMoreButton.onclick = () => {
+                window.location.href = "projects.html"; // Redirect to the projects page
+            };
+            buttonWrapper.appendChild(showMoreButton);
+
+            container.appendChild(buttonWrapper);
+            }
+            return;
+        }
+
         const column = document.createElement("div");
         column.className = 'col-lg-4 col-md-6 col-12';
 
@@ -272,19 +247,6 @@ function projectCardHTML(projectData){
             </div>
         </div>
     `
-}
-
-
-function getProjectCardHTML(projectData){
-    return `
-        <div class="project-data-div">
-            <h1>${projectData.title}</h1>
-            <p>${projectData.description}</p>
-        </div>
-        <div class="image-container">
-            ${getImagesHTML(projectData.images)}
-        </div>
-    `;
 }
 
 function createOverlay(){
@@ -459,7 +421,7 @@ window.onload = function () {
     }
 
     if (document.querySelector(".project-data-container")) {
-        createProjectData(contentProjectData, ".project-data-container");
+        createProjectCard(contentProjectData, ".project-data-container");
         fadeInOnScroll(".project-container"); // Fade in effect for projects
     }
 
@@ -467,8 +429,8 @@ window.onload = function () {
         createCompetenceCard(contentCompetenciesData, ".competencies-wrapper");
     }
 
-    if (document.querySelector(".projects")){
-        createProjectCard(contentProjectData, ".projects");
+    if (document.querySelector(".frontpage-projects")){
+        createProjectCard(contentProjectData, ".frontpage-projects");
     }
 
 }
