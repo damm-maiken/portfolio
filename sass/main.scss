@@ -1,16 +1,16 @@
-@use 'base/typography';
+@use 'base/typography' as *;
 
-@use 'layout/navigation';
-@use 'layout/footer';
+@use 'layout/navigation' as *;
+@use 'layout/footer' as *;
 
-@use 'components/projectCard';
-@use 'components/buttons';
-@use 'components/competenciesCard';
-@use 'components/accordion';
+@use 'components/projectCard' as *;
+@use 'components/buttons' as *;
+@use 'components/competenciesCard' as *;
+@use 'components/accordion' as *;
 
-@use 'pages/frontPage';
-@use 'pages/work';
-@use 'pages/about';
+@use 'pages/frontPage' as *;
+@use 'pages/work' as *;
+@use 'pages/about' as *;
 
 
 
