@@ -238,6 +238,42 @@ function createProjectData(projectData, containerName){
     createPopup(); 
 }
 
+function createProjectCard(projectData, containerName){
+    const container = document.querySelector(containerName);
+
+
+    projectData.forEach((data) => {
+        const column = document.createElement("div");
+        column.className = 'col-lg-4 col-md-6 col-12';
+
+            const projectCard = document.createElement("div");
+            projectCard.className = 'projectCard';
+            projectCard.innerHTML = projectCardHTML(data);
+            column.appendChild(projectCard);
+
+            const projectOverlay = document.createElement("div"); 
+            projectOverlay.innerHTML = createOverlay();
+            projectOverlay.querySelector("button").addEventListener("click", () => openPopup(data));
+            projectCard.appendChild(projectOverlay);
+        container.appendChild(column);
+    });
+}
+
+function projectCardHTML(projectData){
+    return ` 
+        <div class="projectCard-left"></div>
+        <div class="projectCard-right">
+            <div class="projectCard-image">
+                <img src="${projectData.images[0]}">
+            </div>
+            <div class="projectCard-text">
+                <h3>${projectData.title}</h3>
+                <p>${projectData.description}</p>
+            </div>
+        </div>
+    `
+}
+
 
 function getProjectCardHTML(projectData){
     return `
@@ -264,13 +300,13 @@ function getImagesHTML(imageslist) {
         return imageslist.map(imagelist => `<img src="${imagelist}">`).join("");
 }
 
+
 // Function to create a popup for displaying project details
 function createPopup(){
-     // Create a popup container for displaying project details
     const popupContainer = document.createElement("div");
     popupContainer.className = 'popup-container';
-    popupContainer.id = 'popup-container-id'
-        popupContainer.innerHTML = `
+    popupContainer.id = 'popup-container-id';
+    popupContainer.innerHTML = `
         <div class="popup-content">
             <h2 id="popup-title"></h2>
             <p id="popup-details"></p>
@@ -281,18 +317,21 @@ function createPopup(){
             <button class="close primary-btn">Go back</button>
         </div>`;
 
-    //Create an overlay for the popup
     const overlay = document.createElement("div");
     overlay.className = 'popup-overlay';
     overlay.id = 'popup-overlay-id';
-    document.body.appendChild(overlay);
 
+    // Close logic
     popupContainer.querySelector(".close").addEventListener("click", () => {
         popupContainer.classList.remove("show");
         overlay.classList.remove("show");
-    })
+    });
+
+    // Append elements
+    document.body.appendChild(overlay);
     document.body.appendChild(popupContainer); 
 }
+
 
 function fadeInOnScroll(selector) {
     const elements = document.querySelectorAll(selector);
@@ -318,6 +357,9 @@ function fadeInOnScroll(selector) {
 // Function to open a popup with project details
 // This function is called when the "Read more" text is clicked
 function openPopup(data){
+    if (!document.getElementById("popup-container-id")) {
+        createPopup();
+    }
     const popup = document.getElementById("popup-container-id");
     const overlay = document.getElementById("popup-overlay-id");
     document.getElementById("popup-title").textContent = data.title;
@@ -423,6 +465,10 @@ window.onload = function () {
 
     if (document.querySelector(".competencies-wrapper")){
         createCompetenceCard(contentCompetenciesData, ".competencies-wrapper");
+    }
+
+    if (document.querySelector(".projects")){
+        createProjectCard(contentProjectData, ".projects");
     }
 
 }
