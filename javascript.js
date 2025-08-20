@@ -193,62 +193,60 @@ function displayContent() {
     chevron.classList.toggle('rotate');    // For chevron rotation
 }
 
+function createProjectCard(projectData, containerName){
+    const container = document.querySelector(containerName);
 
+    projectData.forEach((data, index) => {
 
-function createProjectData(projectData, containerName){
-    // Find the HTML container
-    const container = document.querySelector(containerName)
+        //Only render the first 3 projects (used for the frontpage)
+        if (containerName === ".frontpage-projects" && index >= 3){
+            if (index === 3) {
+                            
+            const buttonWrapper = document.createElement("div");
+            buttonWrapper.className = "col-12 text-center mt-4";
 
-    // Loop through the project data array and create a div for each object
-    projectData.forEach((data, index) => { 
-        
-        // Create a div for each project
-        const projectContainer = document.createElement("div");
-        projectContainer.className = 'project-container';
-        if (index % 2 === 1) {
-            projectContainer.classList.add('right-align');
+            const showMoreButton = document.createElement("button");
+            showMoreButton.className = "primary-btn";
+            showMoreButton.innerText = "See more projects";
+            showMoreButton.onclick = () => {
+                window.location.href = "projects.html"; // Redirect to the projects page
+            };
+            buttonWrapper.appendChild(showMoreButton);
+
+            container.appendChild(buttonWrapper);
+            }
+            return;
         }
-        if (index !== 0){
-            projectContainer.style.opacity = '0'; // Hide all projects except the first one
-            projectContainer.style.pointerEvents = 'none'; // Disable pointer events for hidden projects
-        }
 
-            // Create the left edge of the project container
-            const leftEdge = document.createElement("div");
-            leftEdge.className = 'left-edge';
-            projectContainer.appendChild(leftEdge);
+        const column = document.createElement("div");
+        column.className = 'col-lg-4 col-md-6 col-12';
 
-            // Create the right side 
-            const rightSide = document.createElement("div");
-            rightSide.className = 'project-right-side';
-            rightSide.innerHTML = getProjectCardHTML(data);
-            projectContainer.appendChild(rightSide);
+            const projectCard = document.createElement("div");
+            projectCard.className = 'projectCard';
+            projectCard.innerHTML = projectCardHTML(data);
+            column.appendChild(projectCard);
 
-            const projectOverlay = document.createElement("div");
-            projectOverlay.className = 'project-overlay';
+            const projectOverlay = document.createElement("div"); 
             projectOverlay.innerHTML = createOverlay();
             projectOverlay.querySelector("button").addEventListener("click", () => openPopup(data));
-            projectContainer.appendChild(projectOverlay);
-    
-    // Append the project container to the main container
-    container.appendChild(projectContainer);
+            projectCard.appendChild(projectOverlay);
+        container.appendChild(column);
     });
-
-    // Create the popup for displaying project details
-    createPopup(); 
 }
 
-
-function getProjectCardHTML(projectData){
-    return `
-        <div class="project-data-div">
-            <h1>${projectData.title}</h1>
-            <p>${projectData.description}</p>
+function projectCardHTML(projectData){
+    return ` 
+        <div class="projectCard-left"></div>
+        <div class="projectCard-right">
+            <div class="projectCard-image">
+                <img src="${projectData.images[0]}">
+            </div>
+            <div class="projectCard-text">
+                <h3>${projectData.title}</h3>
+                <p>${projectData.description}</p>
+            </div>
         </div>
-        <div class="image-container">
-            ${getImagesHTML(projectData.images)}
-        </div>
-    `;
+    `
 }
 
 function createOverlay(){
@@ -264,13 +262,13 @@ function getImagesHTML(imageslist) {
         return imageslist.map(imagelist => `<img src="${imagelist}">`).join("");
 }
 
+
 // Function to create a popup for displaying project details
 function createPopup(){
-     // Create a popup container for displaying project details
     const popupContainer = document.createElement("div");
     popupContainer.className = 'popup-container';
-    popupContainer.id = 'popup-container-id'
-        popupContainer.innerHTML = `
+    popupContainer.id = 'popup-container-id';
+    popupContainer.innerHTML = `
         <div class="popup-content">
             <h2 id="popup-title"></h2>
             <p id="popup-details"></p>
@@ -281,18 +279,21 @@ function createPopup(){
             <button class="close primary-btn">Go back</button>
         </div>`;
 
-    //Create an overlay for the popup
     const overlay = document.createElement("div");
     overlay.className = 'popup-overlay';
     overlay.id = 'popup-overlay-id';
-    document.body.appendChild(overlay);
 
+    // Close logic
     popupContainer.querySelector(".close").addEventListener("click", () => {
         popupContainer.classList.remove("show");
         overlay.classList.remove("show");
-    })
+    });
+
+    // Append elements
+    document.body.appendChild(overlay);
     document.body.appendChild(popupContainer); 
 }
+
 
 function fadeInOnScroll(selector) {
     const elements = document.querySelectorAll(selector);
@@ -318,6 +319,9 @@ function fadeInOnScroll(selector) {
 // Function to open a popup with project details
 // This function is called when the "Read more" text is clicked
 function openPopup(data){
+    if (!document.getElementById("popup-container-id")) {
+        createPopup();
+    }
     const popup = document.getElementById("popup-container-id");
     const overlay = document.getElementById("popup-overlay-id");
     document.getElementById("popup-title").textContent = data.title;
@@ -339,40 +343,44 @@ function openPopup(data){
     overlay.classList.add("show");
 }
 
+
 function createCompetenceCard(competenceData, containerName) {
     const container = document.querySelector(containerName);
+    container.classList.add('row', 'g-3', 'align-items-stretch');
 
     competenceData.forEach(data => {
-        const competeciesContainer = document.createElement("div");
-        competeciesContainer.className = 'competencies-container';
+        const columnWrapper = document.createElement("div");
+        columnWrapper.className = 'col-12 col-sm-6 col-md-3 d-flex';
+            const competeciesContainer = document.createElement("div");
+            competeciesContainer.className = 'competencies-container';
 
-            const leftEdge = document.createElement("div");
-            leftEdge.className = 'left-edge';
-            competeciesContainer.appendChild(leftEdge);
+                const leftEdge = document.createElement("div");
+                leftEdge.className = 'competencies-left-edge';
+                competeciesContainer.appendChild(leftEdge);
 
-            const competenciesData = document.createElement("div");
-            competenciesData.className = 'competencies-data';
+                const competenciesData = document.createElement("div");
+                competenciesData.className = 'competencies-data';
 
-                const competecenciesContent = document.createElement("div");
-                competecenciesContent.className = 'competencies-content';
-                competecenciesContent.innerHTML = `
-                <h2>${data.title}</h2>`;
+                    const competecenciesContent = document.createElement("div");
+                    competecenciesContent.className = 'competencies-content';
+                    competecenciesContent.innerHTML = `
+                    <h2>${data.title}</h2>`;
 
-            competenciesData.appendChild(competecenciesContent);
+                competenciesData.appendChild(competecenciesContent);
 
 
-                const competenciesOverlay = document.createElement("div");
-                competenciesOverlay.className = 'competencies-overlay';
-                competenciesOverlay.innerHTML = `
-                    <p>${data.competencies}</p>`;
+                    const competenciesOverlay = document.createElement("div");
+                    competenciesOverlay.className = 'competencies-overlay';
+                    competenciesOverlay.innerHTML = `
+                        <p>${data.competencies}</p>`;
 
-            competenciesData.appendChild(competenciesOverlay);
+                competenciesData.appendChild(competenciesOverlay);
 
-            
-            competeciesContainer.appendChild(competenciesData);
-
+                
+                competeciesContainer.appendChild(competenciesData);
+        columnWrapper.appendChild(competeciesContainer);
         // Append the competencies container to the main container
-        container.appendChild(competeciesContainer);
+        container.appendChild(columnWrapper);
     })
 
 }
@@ -413,12 +421,16 @@ window.onload = function () {
     }
 
     if (document.querySelector(".project-data-container")) {
-        createProjectData(contentProjectData, ".project-data-container");
+        createProjectCard(contentProjectData, ".project-data-container");
         fadeInOnScroll(".project-container"); // Fade in effect for projects
     }
 
     if (document.querySelector(".competencies-wrapper")){
         createCompetenceCard(contentCompetenciesData, ".competencies-wrapper");
+    }
+
+    if (document.querySelector(".frontpage-projects")){
+        createProjectCard(contentProjectData, ".frontpage-projects");
     }
 
 }

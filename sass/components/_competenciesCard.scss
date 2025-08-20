@@ -1,8 +1,8 @@
-.competencies-wrapper{
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 3vw;
-    margin: 3vw;
+.row.competencies-wrapper{
+    margin-left: 1vw;
+    margin-right: 1vw;
+    margin-top: 3vw;
+    margin-bottom: 3vw;
 }
 
 .competencies-container{
@@ -14,6 +14,13 @@
     box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.50);
 }
 
+.competencies-left-edge{
+    background-color: #274C77;
+    width: 10%;
+    border-bottom-left-radius: 1vw;
+    border-top-left-radius: 1vw;
+}
+
 .competencies-data{
     background-color: #ffffff;
     border-bottom-right-radius: 1vw;
@@ -22,6 +29,7 @@
     margin-left: 0;
     padding: 1vw;
     text-align: center;
+    flex: 1;
 }
 
 .competencies-data h2{

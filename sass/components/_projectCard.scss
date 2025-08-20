@@ -194,3 +194,72 @@
     height: 3vw;
     margin: 0.5vw;
 }
+
+.projectCard{
+    position: relative;
+    background-color: #A3CEF120;
+    border-radius: 1rem;
+    display: flex;
+    overflow: hidden;
+    flex-direction: row;
+    width: 100%;
+}
+
+.projectCard-left{
+    background-color: #274C77;
+    width: 2.5rem;
+    flex-shrink: 0;
+    border-bottom-left-radius: 1rem;
+    border-top-left-radius: 1rem;
+}
+
+.projectCard-right{
+    background-color: #ffffff;
+    height: 20rem;
+    margin: 0.5rem;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    flex: 1;
+    margin-left: 0;
+    border-bottom-right-radius: 1rem;
+    border-top-right-radius: 1rem;
+
+}
+
+.projectCard-image {
+    width: 100%;
+    max-height: 100%;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.projectCard-image img {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+}
+
+.projectCard-text {
+    margin-top: auto;
+    background-color: #A3CEF120;
+}
+
+.projectCard-text h3,
+.projectCard-text p{
+    margin: 0;
+    margin-left: 0.5rem;
+    color: #274C77;
+}
+
+.projectCard-text h3{
+    font-weight: 700;
+}
+
+.projectCard:hover .project-overlay{
+    visibility: visible;
+    opacity: 1;
+    pointer-events: auto;
+}
