@@ -1,16 +1,16 @@
-@use 'base/_typography.scss';
+@use 'base/typography';
 
-@use 'layout/_navigation.scss';
-@use 'layout/_footer.scss';
+@use 'layout/navigation';
+@use 'layout/footer';
 
-@use 'components/_projectCard.scss';
-@use 'components/_buttons.scss';
-@use 'components/_competenciesCard.scss';
-@use 'components/_accordion.scss';
+@use 'components/projectCard';
+@use 'components/buttons';
+@use 'components/competenciesCard';
+@use 'components/accordion';
 
-@use 'pages/frontPage.scss';
-@use 'pages/_work.scss';
-@use 'pages/_about.scss';
+@use 'pages/frontPage';
+@use 'pages/work';
+@use 'pages/about';
 
 
 
