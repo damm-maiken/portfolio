@@ -73,6 +73,13 @@ h3 {
   font-size: 1.25rem;
 }
 
+.footer-bottom {
+  text-align: center;
+  font-size: 0.875rem;
+  margin: 0;
+  color: #274C77;
+}
+
 .project-data-container {
   display: block;
 }
