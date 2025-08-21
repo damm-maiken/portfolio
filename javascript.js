@@ -239,7 +239,7 @@ function createProjectCard(projectData, containerName){
         }
     });
 
-    fadeOnScroll(3, ".projectCard");
+    fadeOnScroll(batchSize, ".projectCard");
 }
 
 function fadeOnScroll(batchSize, containerName){
@@ -368,7 +368,7 @@ function competenceCard(competenceData, containerName){
             competenceCard.classList.add('animate__animated', 'animate__fadeInUp');
         }
         });
-    fadeOnScroll(4, ".competenceCard");
+    fadeOnScroll(batchSize, ".competenceCard");
 }
 
 function competenceCardHTML(competenceData){
