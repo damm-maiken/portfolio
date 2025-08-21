@@ -195,6 +195,7 @@ function displayContent() {
 
 function createProjectCard(projectData, containerName){
     const container = document.querySelector(containerName);
+    const batchSize = 3;
 
     projectData.forEach((data, index) => {
 
@@ -222,7 +223,7 @@ function createProjectCard(projectData, containerName){
         column.className = 'col-lg-4 col-md-6 col-12';
 
             const projectCard = document.createElement("div");
-            projectCard.className = 'projectCard';
+            projectCard.className = 'projectCard opacity-0';
             projectCard.innerHTML = projectCardHTML(data);
             column.appendChild(projectCard);
 
@@ -231,7 +232,31 @@ function createProjectCard(projectData, containerName){
             projectOverlay.querySelector("button").addEventListener("click", () => openPopup(data));
             projectCard.appendChild(projectOverlay);
         container.appendChild(column);
+
+        if (index < batchSize) {
+            projectCard.classList.remove('opacity-0');
+            projectCard.classList.add('animate__animated', 'animate__fadeInUp');
+        }
     });
+
+    fadeOnScroll();
+}
+
+function fadeOnScroll(){
+    const batchSize = 3; // Number of cards to reveal on scroll
+    window.addEventListener('scroll', () => {
+        const hiddenCards = document.querySelectorAll('.projectCard.opacity-0');
+        let revealedCards = 0;
+
+        hiddenCards.forEach((card) => {
+            const rect = card.getBoundingClientRect(); // Get the card's position
+            if (rect.top < window.innerHeight && revealedCards < batchSize){ // Check if the card is in view
+                card.classList.remove('opacity-0');
+                card.classList.add('animate__animated', 'animate__fadeInUp');
+                revealedCards++;
+            }
+        })
+    })
 }
 
 function projectCardHTML(projectData){
@@ -295,27 +320,6 @@ function createPopup(){
 }
 
 
-function fadeInOnScroll(selector) {
-    const elements = document.querySelectorAll(selector);
-
-    const observer = new IntersectionObserver((entries, observer) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting){
-                entry.target.style.opacity = '1';
-                entry.target.classList.add('animate__animated', 'animate__fadeInUp');
-                entry.target.style.pointerEvents = 'auto'; // Enable pointer events
-                observer.unobserve(entry.target); // Stop observing after the first intersection
-            }
-        });
-    }, { threshold: 0.2 });
-
-    elements.forEach((el, idx) => {
-        if (idx !== 0) { // Skip the first element
-        observer.observe(el);
-        }
-    });
-}
-
 // Function to open a popup with project details
 // This function is called when the "Read more" text is clicked
 function openPopup(data){
@@ -342,6 +346,7 @@ function openPopup(data){
     popup.classList.add("show");
     overlay.classList.add("show");
 }
+
 
 
 function createCompetenceCard(competenceData, containerName) {
@@ -422,7 +427,6 @@ window.onload = function () {
 
     if (document.querySelector(".project-data-container")) {
         createProjectCard(contentProjectData, ".project-data-container");
-        fadeInOnScroll(".project-container"); // Fade in effect for projects
     }
 
     if (document.querySelector(".competencies-wrapper")){
