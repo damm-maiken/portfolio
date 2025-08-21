@@ -347,47 +347,31 @@ function openPopup(data){
     overlay.classList.add("show");
 }
 
-
-
-function createCompetenceCard(competenceData, containerName) {
+function competenceCard(competenceData, containerName){
     const container = document.querySelector(containerName);
-    container.classList.add('row', 'g-3', 'align-items-stretch');
 
-    competenceData.forEach(data => {
+        competenceData.forEach((data) => {
         const columnWrapper = document.createElement("div");
-        columnWrapper.className = 'col-12 col-sm-6 col-md-3 d-flex';
-            const competeciesContainer = document.createElement("div");
-            competeciesContainer.className = 'competencies-container';
+        columnWrapper.className = 'col-lg-3 col-md-6 col-12';
 
-                const leftEdge = document.createElement("div");
-                leftEdge.className = 'competencies-left-edge';
-                competeciesContainer.appendChild(leftEdge);
+            const competenceCard = document.createElement("div");
+            competenceCard.className = 'competenceCard';
+            competenceCard.innerHTML = competenceCardHTML(data);
+            columnWrapper.appendChild(competenceCard);
 
-                const competenciesData = document.createElement("div");
-                competenciesData.className = 'competencies-data';
-
-                    const competecenciesContent = document.createElement("div");
-                    competecenciesContent.className = 'competencies-content';
-                    competecenciesContent.innerHTML = `
-                    <h2>${data.title}</h2>`;
-
-                competenciesData.appendChild(competecenciesContent);
-
-
-                    const competenciesOverlay = document.createElement("div");
-                    competenciesOverlay.className = 'competencies-overlay';
-                    competenciesOverlay.innerHTML = `
-                        <p>${data.competencies}</p>`;
-
-                competenciesData.appendChild(competenciesOverlay);
-
-                
-                competeciesContainer.appendChild(competenciesData);
-        columnWrapper.appendChild(competeciesContainer);
-        // Append the competencies container to the main container
         container.appendChild(columnWrapper);
-    })
+        
+        });
+}
 
+function competenceCardHTML(competenceData){
+    return `
+        <div class="competenceCard-left"></div>
+        <div class="competenceCard-right">
+            <h3>${competenceData.title}</h3>
+            <p class="competencies-description">${competenceData.competencies}</p>
+        </div>
+    `
 }
 
 
@@ -429,8 +413,8 @@ window.onload = function () {
         createProjectCard(contentProjectData, ".project-data-container");
     }
 
-    if (document.querySelector(".competencies-wrapper")){
-        createCompetenceCard(contentCompetenciesData, ".competencies-wrapper");
+    if (document.querySelector(".competencies")){
+        competenceCard(contentCompetenciesData, ".competencies");
     }
 
     if (document.querySelector(".frontpage-projects")){
