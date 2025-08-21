@@ -239,13 +239,13 @@ function createProjectCard(projectData, containerName){
         }
     });
 
-    fadeOnScroll();
+    fadeOnScroll(3, ".projectCard");
 }
 
-function fadeOnScroll(){
-    const batchSize = 3; // Number of cards to reveal on scroll
+function fadeOnScroll(batchSize, containerName){
+    // const batchSize = 3; // Number of cards to reveal on scroll
     window.addEventListener('scroll', () => {
-        const hiddenCards = document.querySelectorAll('.projectCard.opacity-0');
+        const hiddenCards = document.querySelectorAll(`${containerName} opacity-0`);
         let revealedCards = 0;
 
         hiddenCards.forEach((card) => {
@@ -349,19 +349,26 @@ function openPopup(data){
 
 function competenceCard(competenceData, containerName){
     const container = document.querySelector(containerName);
+    const batchSize = 4;
 
-        competenceData.forEach((data) => {
+
+        competenceData.forEach((data, index) => {
         const columnWrapper = document.createElement("div");
         columnWrapper.className = 'col-lg-3 col-md-6 col-12';
 
             const competenceCard = document.createElement("div");
-            competenceCard.className = 'competenceCard';
+            competenceCard.className = 'competenceCard opacity-0';
             competenceCard.innerHTML = competenceCardHTML(data);
             columnWrapper.appendChild(competenceCard);
 
         container.appendChild(columnWrapper);
         
+        if (index < batchSize) {
+            competenceCard.classList.remove('opacity-0');
+            competenceCard.classList.add('animate__animated', 'animate__fadeInUp');
+        }
         });
+    fadeOnScroll(4, ".competenceCard");
 }
 
 function competenceCardHTML(competenceData){
