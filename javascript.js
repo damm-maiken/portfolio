@@ -422,7 +422,6 @@ window.onload = function () {
 
     if (document.querySelector(".project-data-container")) {
         createProjectCard(contentProjectData, ".project-data-container");
-        fadeInOnScroll(".project-container"); // Fade in effect for projects
     }
 
     if (document.querySelector(".competencies-wrapper")){
