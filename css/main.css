@@ -401,6 +401,7 @@ h3 {
 
 .frontpage-top-wrapper {
   box-shadow: 0 3px 5px rgba(0, 0, 0, 0.5);
+  padding: 4rem;
 }
 
 .frontpage-top-wrapper h1 {
@@ -420,6 +421,10 @@ h3 {
 .frontpage-top-button {
   display: flex;
   justify-content: center;
+}
+
+.frontpage-project-wrapper {
+  padding: 4rem;
 }
 
 .frontpage-project-wrapper h2 {
@@ -442,7 +447,7 @@ h3 {
 }
 
 .about-top-wrapper {
-  padding: 10rem;
+  padding: 4rem;
   box-shadow: 0 0.25rem 0.5rem rgba(0, 0, 0, 0.5);
 }
 
@@ -452,7 +457,7 @@ h3 {
 }
 
 .about-top-right {
-  text-align: right;
+  text-align: center;
 }
 
 .about-top-right img {
@@ -460,8 +465,18 @@ h3 {
   height: auto;
 }
 
+.competencies-wrapper {
+  padding: 4rem;
+  box-shadow: 0 0.25rem 0.5rem rgba(0, 0, 0, 0.5);
+  text-align: center;
+}
+
+.competencies-wrapper .row {
+  align-items: center;
+  justify-content: center;
+}
+
 .projects-top-wrapper {
-  padding: 10rem;
   box-shadow: 0 0.25rem 0.5rem rgba(0, 0, 0, 0.5);
 }
 
@@ -476,8 +491,6 @@ h3 {
 }
 
 .project-wrapper h2 {
-  padding: 5rem;
-  padding-bottom: 0;
   text-align: center;
 }
 
@@ -485,11 +498,6 @@ h3 {
   display: flex;
   justify-content: center;
   align-items: center;
-}
-
-.row .project-data-container {
-  padding-left: 10rem;
-  padding-right: 10rem;
 }
 
 /*# sourceMappingURL=main.css.map */

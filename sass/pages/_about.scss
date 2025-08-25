@@ -1,5 +1,5 @@
 .about-top-wrapper {
-    padding: 10rem;
+    padding: 4rem;
     box-shadow: 0 0.25rem 0.5rem rgba(0, 0, 0, 0.50);
 }
 
@@ -8,10 +8,21 @@
     justify-content: center;
 }
 .about-top-right {
-    text-align: right;
+    text-align: center;
 }
 
 .about-top-right img {
     width: 20rem;
     height: auto;
+}
+
+.competencies-wrapper {
+    padding: 4rem;
+    box-shadow: 0 0.25rem 0.5rem rgba(0, 0, 0, 0.50);
+    text-align: center;
+}
+
+.competencies-wrapper .row {
+    align-items: center;
+    justify-content: center;
 }
