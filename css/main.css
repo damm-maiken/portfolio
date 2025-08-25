@@ -438,12 +438,15 @@ h3 {
   align-items: center;
 }
 
+.experience-top-wrapper, .work-experience-wrapper, .education-wrapper {
+  padding: 4rem;
+}
+
 .work-data-container, .education-data-container {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  margin-bottom: 3vw;
 }
 
 .about-top-wrapper {
