@@ -159,13 +159,14 @@ function createExperienceData(experienceData, containerName){
     const container = document.querySelector(containerName);
 
     experienceData.forEach((data) => {
-    const accordionItem = document.createElement("div");
-    accordionItem.className = 'accordion-item col-lg-10';
-    accordionItem.innerHTML = getAccordionItemHTML(data);
-    
+        const accordionItem = document.createElement("div");
+        accordionItem.className = 'accordion-item col-lg-10';
+        accordionItem.innerHTML = getAccordionItemHTML(data);
+
     accordionItem.querySelector(".accordion-header").addEventListener('click', displayContent);
 
     container.appendChild(accordionItem);
+
     });
 
 }
@@ -401,6 +402,8 @@ function loadFooter() {
 }
 
 
+
+
 // Function to load the JS function so they can be used in HTML
 window.onload = function () {
     // Load the navbar
@@ -408,16 +411,18 @@ window.onload = function () {
     // Load the footer
     loadFooter();
 
-    if (document.querySelector(".work-data-container")) {
-        createExperienceData(experienceData, ".work-data-container"); // Work experience
-    }
-
-    if (document.querySelector(".education-data-container")) {
-        createExperienceData(educationData, ".education-data-container"); // Education
-    }
+    // waitForAnimation();
 
     if (document.querySelector(".project-data-container")) {
         createProjectCard(contentProjectData, ".project-data-container");
+    }
+
+    if (document.querySelector(".work-data-container")) {
+        createExperienceData(experienceData, ".work-data-container", ".work-section .section-header"); // Work experience
+    }
+
+    if (document.querySelector(".education-data-container")) {
+        createExperienceData(educationData, ".education-data-container", ".education-section .section-header"); // Education
     }
 
     if (document.querySelector(".competencies")){
