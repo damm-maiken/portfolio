@@ -160,7 +160,7 @@ function createExperienceData(experienceData, containerName){
 
     experienceData.forEach((data) => {
     const accordionItem = document.createElement("div");
-    accordionItem.className = 'accordion-item';
+    accordionItem.className = 'accordion-item col-lg-10';
     accordionItem.innerHTML = getAccordionItemHTML(data);
     
     accordionItem.querySelector(".accordion-header").addEventListener('click', displayContent);

@@ -16,7 +16,6 @@ h1 {
 
 h2 {
   font-size: 2.5vw;
-  margin: 3vw;
 }
 
 h3 {
@@ -332,21 +331,20 @@ h3 {
 }
 
 .accordion-item {
-  border-top: #274C77 0.15rem solid;
-  border-bottom: #274c77 0.15rem solid;
-  margin-left: auto;
-  margin-right: auto;
-  margin-top: 1vw;
-  margin-bottom: 1vw;
+  border-top: #274C77 0.15rem solid !important;
+  border-bottom: #274c77 0.15rem solid !important;
+  border-left: none !important;
+  border-right: none !important;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
   display: flex;
   flex-direction: column;
-  width: 60vw;
+  width: 100%;
 }
 
-.accordion-item h2 {
-  font-size: 1.5vw;
-  padding: 0.5vw;
-  margin: 0;
+.accordion-item:first-of-type,
+.accordion-item:last-of-type {
+  border-radius: 0 !important;
 }
 
 .accordion-header {
@@ -357,7 +355,7 @@ h3 {
 
 .accordion-header i {
   margin-left: auto;
-  font-size: 1.5vw;
+  font-size: 1.5rem;
   align-self: center;
   display: flex;
   align-items: center;
@@ -372,14 +370,14 @@ h3 {
 .accordion-title {
   font-weight: bold;
   color: #274C77;
-  font-size: 1.5vw;
-  padding: 0.5vw;
+  font-size: 1.5rem;
+  padding: 0.5rem;
 }
 
 .accordion-company {
   font-weight: normal;
-  font-size: 1.5vw;
-  padding: 0.5vw;
+  font-size: 1.5rem;
+  padding: 0.5rem;
 }
 
 .accordion-content {
@@ -390,13 +388,13 @@ h3 {
 }
 
 .accordion-content.open {
-  max-height: 100vh; /* Adjust as needed */
+  max-height: 50rem;
   opacity: 1;
 }
 
 .accordion-content li {
-  font-size: 1.2vw;
-  padding: 0.5vw;
+  font-size: 1.2rem;
+  padding: 0.5rem;
 }
 
 .frontpage-top-wrapper {
@@ -438,8 +436,14 @@ h3 {
   align-items: center;
 }
 
-.experience-top-wrapper, .work-experience-wrapper, .education-wrapper {
+.experience-top-wrapper {
   padding: 4rem;
+}
+
+.work-experience-wrapper, .education-wrapper {
+  padding-left: 4rem;
+  padding-right: 4rem;
+  padding-bottom: 4rem;
 }
 
 .work-data-container, .education-data-container {
