@@ -486,17 +486,22 @@ h3 {
 }
 
 .projects-top-wrapper {
+  padding: 2rem;
   box-shadow: 0 0.25rem 0.5rem rgba(0, 0, 0, 0.5);
 }
 
 .projects-top-right {
-  text-align: right;
+  text-align: center;
 }
 
 .projects-top-right img {
   width: 30rem;
   height: auto;
   border-radius: 1rem;
+}
+
+.project-wrapper {
+  padding: 2rem;
 }
 
 .project-wrapper h2 {

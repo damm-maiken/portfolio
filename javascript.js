@@ -133,6 +133,28 @@ const contentProjectData = [
         myRole: "<strong>My role</strong> <br/>My role included designing wireframes, developing front-end components using HTML and CSS, and facilitate the usability test",
         technologyIcons: ["Images/Icons/figma.png", "Images/Icons/html.png", "Images/Icons/css.png", "Images/Icons/c-sharp.png"]
     },
+
+    {
+        title: "MIWO",
+        description: "A website for connecting with other to help with DIY projects.",
+        imagesStyle: "side-by-side",
+        images: ["Images/MIWO/MIWO_about.png", "Images/MIWO/MIWO_feed.png"],
+        details: "<strong>MIWO</strong> <br/> MIWO is a platform that connects individuals who are interested in DIY projects. Users can share their projects, ask for help, and collaborate with others.",
+        technology: "<strong>Technology</strong> <br/> Figma was used for wireframing and design exploration. The final prototype was developed using HTML, CSS, and C#.",
+        myRole: "<strong>My role</strong> <br/>My role included designing wireframes, developing front-end components using HTML and CSS, and facilitate the usability test",
+        technologyIcons: ["Images/Icons/figma.png", "Images/Icons/html.png", "Images/Icons/css.png", "Images/Icons/c-sharp.png"]
+    },
+
+    {
+        title: "MIWO",
+        description: "A website for connecting with other to help with DIY projects.",
+        imagesStyle: "side-by-side",
+        images: ["Images/MIWO/MIWO_about.png", "Images/MIWO/MIWO_feed.png"],
+        details: "<strong>MIWO</strong> <br/> MIWO is a platform that connects individuals who are interested in DIY projects. Users can share their projects, ask for help, and collaborate with others.",
+        technology: "<strong>Technology</strong> <br/> Figma was used for wireframing and design exploration. The final prototype was developed using HTML, CSS, and C#.",
+        myRole: "<strong>My role</strong> <br/>My role included designing wireframes, developing front-end components using HTML and CSS, and facilitate the usability test",
+        technologyIcons: ["Images/Icons/figma.png", "Images/Icons/html.png", "Images/Icons/css.png", "Images/Icons/c-sharp.png"]
+    },
 ];
 
 const contentCompetenciesData = [
@@ -246,7 +268,7 @@ function createProjectCard(projectData, containerName){
 function fadeOnScroll(batchSize, containerName){
     // const batchSize = 3; // Number of cards to reveal on scroll
     window.addEventListener('scroll', () => {
-        const hiddenCards = document.querySelectorAll(`${containerName} opacity-0`);
+        const hiddenCards = document.querySelectorAll(`${containerName}.opacity-0`);
         let revealedCards = 0;
 
         hiddenCards.forEach((card) => {
@@ -259,6 +281,7 @@ function fadeOnScroll(batchSize, containerName){
         })
     })
 }
+
 
 function projectCardHTML(projectData){
     return ` 
