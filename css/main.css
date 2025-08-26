@@ -307,11 +307,30 @@ h4 {
   border-top-right-radius: 1rem;
   padding: 0.5rem;
   text-align: center;
+  position: relative;
+}
+
+.competenceCard-right img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0.2; /* low opacity */
+  z-index: 1;
 }
 
 .competenceCard-right h3 {
   color: #274C77;
   font-weight: 700;
+}
+
+.competenceCard-right h3,
+.competenceCard-right p {
+  position: relative;
+  z-index: 2;
+  margin: 0 0 10px 0;
 }
 
 .competencies-description {

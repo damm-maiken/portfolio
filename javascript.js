@@ -161,18 +161,22 @@ const contentCompetenciesData = [
     {
         title: "User Research",
         competencies: "Interviews | Usability testing | Workshops| Surveys | User Journey",
+        image: "Images/Stockphoto/user_research.jpg"
     },
     {
         title: "Product Design",
         competencies: "Figma | Wireframing | Mock ups | Concept development | Prototyping | 3D Modelling",
+        image: "Images/Stockphoto/product_design.jpg"
     },
     {
         title: "Coding",
         competencies: "HTML | CSS | JavaScript | Github | Godot 4 | C#",
+        image: "Images/Stockphoto/coding.jpg"
     },
     {
         title: "Graphical Design",
         competencies: "Illustrator | InDesign | Photoshop | Canva",
+        image: "Images/Stockphoto/graphical_design.jpg"
     },
 ];
 
@@ -399,6 +403,7 @@ function competenceCardHTML(competenceData){
     return `
         <div class="competenceCard-left"></div>
         <div class="competenceCard-right">
+            <img src="${competenceData.image}">
             <h3>${competenceData.title}</h3>
             <p class="competencies-description">${competenceData.competencies}</p>
         </div>
