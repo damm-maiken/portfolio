@@ -134,27 +134,6 @@ const contentProjectData = [
         technologyIcons: ["Images/Icons/figma.png", "Images/Icons/html.png", "Images/Icons/css.png", "Images/Icons/c-sharp.png"]
     },
 
-    {
-        title: "MIWO",
-        description: "A website for connecting with other to help with DIY projects.",
-        imagesStyle: "side-by-side",
-        images: ["Images/MIWO/MIWO_about.png", "Images/MIWO/MIWO_feed.png"],
-        details: "<strong>MIWO</strong> <br/> MIWO is a platform that connects individuals who are interested in DIY projects. Users can share their projects, ask for help, and collaborate with others.",
-        technology: "<strong>Technology</strong> <br/> Figma was used for wireframing and design exploration. The final prototype was developed using HTML, CSS, and C#.",
-        myRole: "<strong>My role</strong> <br/>My role included designing wireframes, developing front-end components using HTML and CSS, and facilitate the usability test",
-        technologyIcons: ["Images/Icons/figma.png", "Images/Icons/html.png", "Images/Icons/css.png", "Images/Icons/c-sharp.png"]
-    },
-
-    {
-        title: "MIWO",
-        description: "A website for connecting with other to help with DIY projects.",
-        imagesStyle: "side-by-side",
-        images: ["Images/MIWO/MIWO_about.png", "Images/MIWO/MIWO_feed.png"],
-        details: "<strong>MIWO</strong> <br/> MIWO is a platform that connects individuals who are interested in DIY projects. Users can share their projects, ask for help, and collaborate with others.",
-        technology: "<strong>Technology</strong> <br/> Figma was used for wireframing and design exploration. The final prototype was developed using HTML, CSS, and C#.",
-        myRole: "<strong>My role</strong> <br/>My role included designing wireframes, developing front-end components using HTML and CSS, and facilitate the usability test",
-        technologyIcons: ["Images/Icons/figma.png", "Images/Icons/html.png", "Images/Icons/css.png", "Images/Icons/c-sharp.png"]
-    },
 ];
 
 const contentCompetenciesData = [
@@ -255,8 +234,8 @@ function createProjectCard(projectData, containerName){
             column.appendChild(projectCard);
 
             const projectOverlay = document.createElement("div"); 
-            projectOverlay.innerHTML = createOverlay();
-            projectOverlay.querySelector("button").addEventListener("click", () => openPopup(data));
+            projectOverlay.className = "project-overlay";
+            projectOverlay.appendChild(createButton("Read more", () => openPopup(data)));
             projectCard.appendChild(projectOverlay);
         container.appendChild(column);
 
@@ -302,24 +281,42 @@ function projectCardHTML(projectData){
     `
 }
 
-function createOverlay(){
-    return `
-        <div class="project-overlay">
-            <button class="primary-btn">Read more</button>
-        </div>
-    `;
+// function createOverlay(){
+//     return `
+//         <div class="project-overlay">
+//             ${createButton("Read more", () => openPopup(data))} 
+//         </div>
+//     `;
+// }
+
+function createButton(buttonName, onClick){
+    const button = document.createElement("button");
+    button.className = "primary-btn";
+    button.textContent = buttonName;
+    if (onClick) {
+        button.addEventListener("click", onClick);
+    }
+    return button;
 }
 
 // Function to get images HTML for each project
 function getImagesHTML(imageslist) {
-        return imageslist.map(imagelist => `<img src="${imagelist}">`).join("");
+        return `
+        <div class="row g-2">
+            ${imageslist.map(image => `
+                <div class="popup-image-col col-12 col-md-6 col-lg-4">
+                    <img src="${image}" class="img-fluid mx-auto" alt="">
+                </div>
+            `).join("")}
+        </div>
+    `;
 }
 
 
 // Function to create a popup for displaying project details
 function createPopup(){
     const popupContainer = document.createElement("div");
-    popupContainer.className = 'popup-container';
+    popupContainer.className = 'popup-container col-10 col-md-8 col-lg-8 mx-auto';
     popupContainer.id = 'popup-container-id';
     popupContainer.innerHTML = `
         <div class="popup-content">
@@ -329,8 +326,14 @@ function createPopup(){
             <div id="technology-icons"></div>
             <p id="popup-myRole"></p>
             <div id="popup-images"></div>
-            <button class="close primary-btn">Go back</button>
         </div>`;
+
+        const closeButton = createButton("Go back", () => {
+            popupContainer.classList.remove("show");
+            overlay.classList.remove("show");
+        });
+        closeButton.classList.add("close");
+        popupContainer.querySelector(".popup-content").appendChild(closeButton);
 
     const overlay = document.createElement("div");
     overlay.className = 'popup-overlay';
