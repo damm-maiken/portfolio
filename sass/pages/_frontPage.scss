@@ -1,8 +1,6 @@
 .frontpage-top-wrapper {
     box-shadow: 0 3px 5px rgba(0, 0, 0, 0.50);
     background-color: #440D0F05;
-    // background-color: #8E6E5320;
-
 }
 
 .frontpage-top-wrapper h1 {
@@ -12,8 +10,45 @@
 
 
 .frontpage-top-wrapper .row{
+    position: relative;
+    display: flex;
     align-items: center;
     justify-content: center;
+    overflow: hidden;
+}
+
+.frontpage-top-wrapper .row::before{
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: -1;
+
+    background: 
+        linear-gradient(rgba(255, 255, 255, 0.8), rgba(255, 255, 255, 0.8)),
+        url(../Images/Stockphoto/UX.jpg) center left/cover no-repeat;
+
+    mask-image: linear-gradient(to right, black 0%, black 33.3%, transparent 50%);
+    -webkit-mask-image: linear-gradient(to right, black 0%, black 33.3%, transparent 50%);
+    mask-repeat: no-repeat;
+    -webkit-mask-repeat: no-repeat;
+}
+
+.frontpage-top-wrapper .row::after {
+    content: "";
+    position: absolute;
+    top: 0; left: 0; bottom: 0; right: 0;
+    background:
+        linear-gradient(rgba(255, 255, 255, 0.8), rgba(255, 255, 255, 0.8)),
+        url(../Images/Stockphoto/code_illustration.jpg) center right/cover no-repeat;
+    z-index: -2;
+
+    mask-image: linear-gradient(to right, transparent 50%, black 66.6%, black 100%);
+    -webkit-mask-image: linear-gradient(to right, transparent 50%, black 66.6%, black 100%);
+    mask-repeat: no-repeat;
+    -webkit-mask-repeat: no-repeat;
 }
 
 .frontpage-top-left, .frontpage-top-middle, .frontpage-top-right {
