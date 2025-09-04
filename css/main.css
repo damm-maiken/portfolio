@@ -517,6 +517,7 @@ h4 {
 .about-top-right img {
   width: 20rem;
   height: auto;
+  border-radius: 10rem;
 }
 
 .competencies-wrapper {
