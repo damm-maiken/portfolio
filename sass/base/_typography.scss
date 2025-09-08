@@ -6,7 +6,6 @@ body {
     padding: 0;
 }
 
-
 h1{
     font-size: 4rem !important;
     font-weight: 500 !important;
@@ -25,4 +24,51 @@ h3{
 h4{
     font-size: 1.25rem !important;
     font-weight: 500 !important;
+}
+
+//Medium devices
+@media screen and (max-width: 1024px) {
+    h1 {
+        font-size: 3rem !important;
+    }
+
+    h2 {
+        font-size: 2.25rem !important;
+    }
+
+    h3 {
+        font-size: 1.75rem !important;
+    }
+
+    h4 {
+        font-size: 1.5rem !important;
+    }
+
+    p {
+        font-size: 1.125rem !important;
+    }
+}
+
+
+//Small devices
+@media screen and (max-width: 640px) {
+    h1 {
+        font-size: 2rem !important;
+    }
+
+    h2 {
+        font-size: 1.75rem !important;
+    }
+
+    h3 {
+        font-size: 1.50rem !important;
+    }
+
+    h4 {
+        font-size: 1.25rem !important;
+    }
+
+    p {
+        font-size: 1rem !important;
+    }
 }
