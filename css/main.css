@@ -78,8 +78,7 @@ h4 {
   text-align: center;
   text-decoration: none;
   padding: 0.75rem;
-  width: 7vw;
-  font-size: 1vw;
+  width: 7rem;
 }
 
 .top-nav-bar .nav-link:hover {
@@ -533,12 +532,22 @@ h4 {
 
 .experience-top-wrapper {
   padding: 4rem;
+  box-shadow: 0 3px 5px rgba(0, 0, 0, 0.5);
+  background-color: rgba(68, 13, 15, 0.0196078431);
+}
+
+.experience-top-right {
+  text-align: center;
+}
+
+.experience-top-right img {
+  width: 30rem;
+  height: auto;
+  border-radius: 1rem;
 }
 
 .work-experience-wrapper, .education-wrapper {
-  padding-left: 4rem;
-  padding-right: 4rem;
-  padding-bottom: 4rem;
+  padding: 4rem;
   animation: fadeInUp;
   animation-duration: 2s;
 }
