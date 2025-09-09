@@ -29,8 +29,8 @@
 }
 
 @media screen and (max-width: 640px) {
-    .projects-top-wrapper .project-wrapper {
-        padding: 1rem;
+    .projects-top-wrapper, .project-wrapper {
+        padding: 0.5rem !important;
     }
     
 }
