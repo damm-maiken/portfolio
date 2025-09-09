@@ -481,6 +481,7 @@ h4 {
   align-items: center;
   justify-content: center;
   overflow: hidden;
+  padding: 2rem;
 }
 
 .frontpage-top-wrapper .row::before {
@@ -534,6 +535,7 @@ h4 {
 
 .frontpage-project-wrapper h2 {
   text-align: center;
+  padding: 1rem;
 }
 
 .frontpage-projects {
