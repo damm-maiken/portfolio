@@ -6,6 +6,8 @@
     overflow: hidden;
     flex-direction: row;
     width: 100%;
+    box-shadow: 0 3px 5px rgba(0, 0, 0, 0.50);
+
 }
 
 .projectCard-left{
@@ -171,16 +173,6 @@
     opacity: 1;
 }
 
-// #technology-icons{
-//     display: flex;
-//     justify-content: center;    
-// }
-
-// #technology-icons img{
-//     width: 2rem;
-//     height: 3rem;
-//     margin: 0.5rem;
-// }
 
 .technology-icons-row {
     display: flex;
