@@ -296,15 +296,17 @@ h4 {
   opacity: 1;
 }
 
-#technology-icons {
+.technology-icons-row {
   display: flex;
+  gap: 1rem;
+  flex-wrap: nowrap;
   justify-content: center;
+  align-items: center;
 }
 
-#technology-icons img {
-  width: 3vw;
-  height: 3vw;
-  margin: 0.5vw;
+.technology-icon {
+  height: 4rem;
+  width: 4rem;
 }
 
 .primary-btn {

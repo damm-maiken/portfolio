@@ -6,10 +6,12 @@ const experienceData = [
         company: " - Dataproces",
         period: "June 2023 - ",
         details: [
-            "Designed high-fidelity prototypes in Figma in close collaboration with developers.",
-            "Contributed to UX optimization with a focus on usability.",
-            "Coded UI components in HTML and CSS",
-            "Involved in the full development process from idea to final product"
+            "Created user-friendly SaaS-solutions for the Danish municipalities to ease the workload.",
+            "Involved in the full development process from idea to final product",
+            "Used research to optimize the user experience on new and existing SaaS-solutions.",
+            "Designed high-fidelity prototypes in Figma for both presentation and development purpose.",
+            "Coded UI elements using HTML, CSS, and JavaScript.",
+            "Created flyers, roll-ups and financial reports using Illustrator, InDesign, and Photoshop."
         ]
     },
 
@@ -18,8 +20,9 @@ const experienceData = [
         company: " - AAU Student Guidance",
         period: "June 2022 - June 2023",
         details: [
-            "Updated websites using Umbraco CMS",
-            "Created graphic elements for digital useI did also create content for social media using Adobe InDesign, Premiere Pro and Canva."
+            "Updated website content using Umbraco CMS",
+            "Used Illustrator, InDesign, Premiere Pro, and Photoshop to create visual elements for commercial purposes.",
+            "Created content for social media using Adobe InDesign, Premiere Pro and Canva."
         ]
     },
 
@@ -44,8 +47,9 @@ const educationData = [
         period: "September 2023 - June 2025",
         detailsTitle: "Master's Degree, Interaction Design",
         details: [
-            "Strong skills in researching, analyzing, and solving user-centered design problems using the latest design methods",
-            "Specialized in user involvement and the design of innovative user-friendly solutions with a focus on functionality and accessibility"
+            "<strong>Master thesis</strong>: Created an gamified application to improve mental health among young adults. For this project in-depth research regarding young adults mental health and possible solutions was conducted, including interviews with experts within the field. Based on this a high-fidelity prototype was developed using Godot Game engine, afterwards a one-week user study was conducted to evaluate the solution.",
+            "Gained strong skills in researching, analyzing, and problem solving different cases.",
+            "Specialized in user involvement and the design of innovative user-friendly solutions with a focus on functionality and accessibility."
         ]
     },
     
@@ -55,9 +59,9 @@ const educationData = [
         period: "September 2020 - June 2023",
         detailsTitle: "Bachelor's Degree, Interaction Design",
         details: [
-            "Worked intensively with user involvement through qualitative methods such as user testing and interviews, as well as quantitative surveys",
-            "Gained technical understanding and practical experience with HTML, CSS, C, and C# for developing functional prototypes and interactive solutions",
-            "Focused on designing digital solutions with high usability and aesthetics"
+            "Gained technical understanding and practical experience with HTML, CSS, C, and C# for developing functional prototypes and interactive solutions.",
+            "Focused on designing digital solutions with high usability and aesthetics.",
+            "Worked intensively with user involvement through qualitative methods such as user testing and interviews, as well as quantitative surveys."
         ]
     },
 ];
@@ -326,6 +330,14 @@ function getImagesHTML(imageslist) {
     `;
 }
 
+function getTechnologyIconsHTML(icons) {
+    return `
+        <div class="technology-icons-row">
+            ${icons.map(icon => `<img src="${icon}" class="technology-icon">`).join("")}
+        </div>
+    `;
+}
+
 
 // Function to create a popup for displaying project details
 function createPopup(){
@@ -382,7 +394,7 @@ function openPopup(data){
     imagesPopup.innerHTML = getImagesHTML(data.images);
 
     const technologyIcons = document.getElementById("technology-icons");
-    technologyIcons.innerHTML = getImagesHTML(data.technologyIcons);
+    technologyIcons.innerHTML = getTechnologyIconsHTML(data.technologyIcons);
 
     // Reset scroll position
     popup.querySelector(".popup-content").scrollTop = 0; 
