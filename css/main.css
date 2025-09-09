@@ -3,7 +3,7 @@ body {
   box-sizing: border-box;
   width: 100%;
   margin: 0;
-  padding: 0;
+  padding: 0rem;
 }
 
 h1 {
@@ -530,6 +530,11 @@ h4 {
   align-items: center;
 }
 
+@media screen and (max-width: 640px) {
+  .frontpage-project-wrapper {
+    padding: 1rem;
+  }
+}
 .experience-top-wrapper {
   padding: 4rem;
   box-shadow: 0 3px 5px rgba(0, 0, 0, 0.5);
@@ -559,6 +564,11 @@ h4 {
   justify-content: center;
 }
 
+@media screen and (max-width: 640px) {
+  .experience-top-wrapper, .work-experience-wrapper, .education-wrapper {
+    padding: 1rem;
+  }
+}
 .about-top-wrapper {
   padding: 4rem;
   box-shadow: 0 0.25rem 0.5rem rgba(0, 0, 0, 0.5);
@@ -591,6 +601,11 @@ h4 {
   justify-content: center;
 }
 
+@media screen and (max-width: 640px) {
+  .about-top-wrapper .competencies-wrapper {
+    padding: 1rem;
+  }
+}
 .projects-top-wrapper {
   padding: 4rem;
   box-shadow: 0 0.25rem 0.5rem rgba(0, 0, 0, 0.5);
@@ -619,6 +634,12 @@ h4 {
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+@media screen and (max-width: 640px) {
+  .projects-top-wrapper .project-wrapper {
+    padding: 1rem;
+  }
 }
 
 /*# sourceMappingURL=main.css.map */

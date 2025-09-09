@@ -3,7 +3,7 @@ body {
     box-sizing: border-box;
     width: 100%;
     margin: 0;
-    padding: 0;
+    padding: 0rem;
 }
 
 h1{
@@ -52,6 +52,7 @@ h4{
 
 //Small devices
 @media screen and (max-width: 640px) {
+
     h1 {
         font-size: 2rem !important;
     }
