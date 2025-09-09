@@ -165,7 +165,7 @@ const contentProjectData = [
 const contentCompetenciesData = [
     {
         title: "User Research",
-        competencies: "Interviews | Usability testing | Workshops| Surveys | User Journey",
+        competencies: "Interviews | Usability testing | Workshops| Surveys | User Stories",
         image: "Images/Stockphoto/user_research.jpg"
     },
     {
