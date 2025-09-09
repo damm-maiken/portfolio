@@ -10,6 +10,10 @@
     box-shadow: 0 0.2rem 0.3rem rgba(0, 0, 0, 0.20);
 }
 
+.navbar-brand img {
+    height: 5rem;
+}
+
 .top-nav-bar .nav-link{
     color: #274C77 !important;
     text-align: center;
@@ -21,4 +25,10 @@
 .top-nav-bar .nav-link:hover{
     background-color: #274C77;
     color: #ffffff !important;
+}
+
+@media screen and (max-width: 640px) {
+    .top-nav-bar .nav-link{
+        text-align: left;
+    }
 }
