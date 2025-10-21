@@ -4,13 +4,13 @@ import { projectData } from "./data.js";
 import { competenciesData } from "./data.js";
 
 
-function createExperienceData(experienceData, containerName){
+function createExperienceData(experiences, containerName){
     const container = document.querySelector(containerName);
 
-    experienceData.forEach((data) => {
+    experiences.forEach((experience) => {
         const accordionItem = document.createElement("div");
         accordionItem.className = 'accordion-item col-lg-10';
-        accordionItem.innerHTML = getAccordionItemHTML(data);
+        accordionItem.insertAdjacentHTML('beforeend', getAccordionItemHTML(experience));
 
     accordionItem.querySelector(".accordion-header").addEventListener('click', displayContent);
 
@@ -30,18 +30,20 @@ function getAccordionItemHTML(data){
 
         <div class="accordion-content">
             <ul>
-                ${data.details.map(detail => `<li>${detail}</li>`).join("")}
+                ${data.details.map(bullet => `<li>${bullet}</li>`).join("")}
             </ul>
         </div>
     `;
 }
 
 function displayContent() {
-    const content = this.nextElementSibling;
+    const content = this.nextElementSibling; //This is the content for the accordion 
     const chevron = this.querySelector('i');
-    content.classList.toggle('open');      // For smooth accordion transition
-    chevron.classList.toggle('rotate');    // For chevron rotation
+    content.classList.toggle('open');      // Adds/removes class open to accordion content when it is clicked
+    chevron.classList.toggle('rotate');    // Adds/removes the class rotate to the chevron when clicked
 }
+
+
 
 function createProjectCard(projectData, containerName){
     const container = document.querySelector(containerName);
@@ -136,10 +138,10 @@ function createButton(buttonName, onClick){
 }
 
 // Function to get images HTML for each project
-function getImagesHTML(imageslist) {
+function getImagesHTML(images) {
         return `
         <div class="row g-2">
-            ${imageslist.map(image => `
+            ${images.map(image => `
                 <div class="popup-image-col col-12 col-md-6 col-lg-4">
                     <img src="${image}" class="img-fluid mx-auto" alt="">
                 </div>
