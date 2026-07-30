@@ -177,8 +177,8 @@ h4 {
 }
 
 .projectCard-text {
-  margin-top: auto;
   background-color: rgba(163, 206, 241, 0.1254901961);
+  flex: 1;
 }
 
 .projectCard-text h3,

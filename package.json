@@ -1,5 +1,8 @@
 {
   "type": "module",
+  "scripts": {
+    "sass": "sass sass/main.scss css/main.css"
+  },
   "dependencies": {
     "animate.css": "^4.1.1"
   },
