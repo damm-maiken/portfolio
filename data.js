@@ -102,7 +102,7 @@ export const projectData = [
 
     {
         title: "MIWO",
-        description: "A website for connecting with other to help with DIY projects.",
+        description: "A website for connecting with other to help with your DIY projects.",
         imagesStyle: "side-by-side",
         images: ["Images/MIWO/MIWO_about.png", "Images/MIWO/MIWO_feed.png"],
         details: "<strong>MIWO</strong> <br/> MIWO is a platform that connects individuals who are interested in DIY projects. Users can share their projects, ask for help, and collaborate with others. MIWO was of my university projects and focused on creating a functional prototype. ",
